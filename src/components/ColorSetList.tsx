@@ -21,7 +21,7 @@ export const ColorSetList = (props: ColorSetListProps) => (
     <List>
       {
         props.collections.map((collection: ColorCollectionType, index: number) => (
-          <ListItem key={index} onClick={() => {props.collectionClicked(collection)}}>
+          <ListItem key={index} onClick={() => {props.collectionClicked(collection.id)}}>
             {collection.label}
           </ListItem>
         ))
