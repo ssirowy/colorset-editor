@@ -1,0 +1,1035 @@
+{
+  "colorCollections": [
+    {
+      "id": "skittles",
+      "label": "Skittles",
+      "categoricalPalettes": [
+        {
+          "id": "skittles",
+          "label": "Skittles",
+          "type": "discrete",
+          "colors": [
+            "#007AFF",
+            "#4CD964",
+            "#F73AC0",
+            "#FFB90A",
+            "#673FB4",
+            "#5AC8FA",
+            "#FFEB4E",
+            "#FC0043",
+            "#8CC152",
+            "#BA1ED6",
+            "#1FBCD2",
+            "#FF8AFF",
+            "#0001FC",
+            "#CDDA49",
+            "#159588",
+            "#FF5F00"
+          ]
+        },
+        {
+          "id": "skittles_2",
+          "label": "More Skittles",
+          "type": "discrete",
+          "colors": [
+            "#673FB4",
+            "#FFB90A",
+            "#FFEB4E",
+            "#4CD964",
+            "#F73AC0",
+            "#007AFF",
+            "#FC0043",
+            "#159588",
+            "#CDDA49",
+            "#FF8AFF",
+            "#0001FC",
+            "#5AC8FA",
+            "#BA1ED6",
+            "#1FBCD2",
+            "#FF5F00",
+            "#8CC152"
+          ]
+        },
+        {
+          "id": "paired_skittles",
+          "label": "Paired Skittles",
+          "type": "discrete",
+          "colors": [
+            "#007AFF",
+            "#5AC8FA",
+            "#FF5F00",
+            "#FFB90A",
+            "#4CD964",
+            "#CDDA49",
+            "#BA1ED6",
+            "#FF8AFF",
+            "#0001FC",
+            "#1FBCD2",
+            "#159588",
+            "#8CC152"
+          ]
+        }
+      ],
+      "sequentialPalettes": [
+        {
+          "id": "hot_stuff",
+          "label": "Hot Stuff",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#FFEB4E",
+              "offset": 0
+            },
+            {
+              "color": "#FFB90A",
+              "offset": 33.3
+            },
+            {
+              "color": "#FF5F00",
+              "offset": 66.7
+            },
+            {
+              "color": "#FC0043",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "hot_pink",
+          "label": "hot_pink",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#FFD5FF",
+              "offset": 0
+            },
+            {
+              "color": "#FF8AFF",
+              "offset": 33.3
+            },
+            {
+              "color": "#F73AC0",
+              "offset": 66.7
+            },
+            {
+              "color": "#FC0043",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "cool_it_now",
+          "label": "Cool It Now",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#A6E1FC",
+              "offset": 0
+            },
+            {
+              "color": "#5AC8FA",
+              "offset": 25
+            },
+            {
+              "color": "#1FBCD2",
+              "offset": 50
+            },
+            {
+              "color": "#007AFF",
+              "offset": 75
+            },
+            {
+              "color": "#0001FC",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "yellow_to_blue",
+          "label": "Yellow to Blue",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#FFEB4E",
+              "offset": 0
+            },
+            {
+              "color": "#5AC8FA",
+              "offset": 50
+            },
+            {
+              "color": "#0001FC",
+              "offset": 100
+            }
+          ]
+        }
+      ],
+      "divergingPalettes": [
+        {
+          "id": "preppy",
+          "label": "Preppy",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#F73AC0",
+              "offset": 0
+            },
+            {
+              "color": "#FF8AFF",
+              "offset": 25
+            },
+            {
+              "color": "#EFEFEF",
+              "offset": 50
+            },
+            {
+              "color": "#4CD964",
+              "offset": 75
+            },
+            {
+              "color": "#159588",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "orange_to_purple",
+          "label": "Preppy",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#FF5F00",
+              "offset": 0
+            },
+            {
+              "color": "#FFB90A",
+              "offset": 16.67
+            },
+            {
+              "color": "#FFEB4E",
+              "offset": 33.33
+            },
+            {
+              "color": "#FFFFFF",
+              "offset": 50
+            },
+            {
+              "color": "#FF8AFF",
+              "offset": 66.67
+            },
+            {
+              "color": "#BA1ED6",
+              "offset": 83.33
+            },
+            {
+              "color": "#673FB4",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "red_to_dark_gray",
+          "label": "Red to Dark Gray",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#FC0043",
+              "offset": 0
+            },
+            {
+              "color": "#FF5F00",
+              "offset": 12.5
+            },
+            {
+              "color": "#FFB90A",
+              "offset": 25
+            },
+            {
+              "color": "#FFEB4E",
+              "offset": 37.5
+            },
+            {
+              "color": "#FFFFFF",
+              "offset": 50
+            },
+            {
+              "color": "#C3C3C3",
+              "offset": 62.5
+            },
+            {
+              "color": "#949494",
+              "offset": 75
+            },
+            {
+              "color": "#656565",
+              "offset": 87.5
+            },
+            {
+              "color": "#3F3F3F",
+              "offset": 100
+            }
+          ]
+        }
+      ]
+    }, {
+      "id": "oasis",
+      "label": "Oasis",
+      "categoricalPalettes": [
+        {
+          "id": "boardshorts",
+          "label": "Boardshorts",
+          "type": "discrete",
+          "colors": [
+            "#462C9D",
+            "#75E2E2",
+            "#FFD95F",
+            "#B42F37",
+            "#E57947",
+            "#4276BE",
+            "#FFF0A4",
+            "#170658",
+            "#C2EDEA",
+            "#FBB556",
+            "#3FB0D5",
+            "#6A013A"
+          ]
+        },
+        {
+          "id": "oasis",
+          "label": "Oasis",
+          "type": "discrete",
+          "colors": [
+            "#2693D1",
+            "#184EA0",
+            "#B4DED2",
+            "#72C5D4",
+            "#12165C",
+            "#E9F3D1",
+            "#1981CE",
+            "#D2EAD1",
+            "#1864B4",
+            "#173589",
+            "#3FB0D5"
+          ]
+        },
+        {
+          "id": "santa_anas",
+          "label": "Santa Anas",
+          "type": "discrete",
+          "colors": [
+            "#5D014F",
+            "#FFA451",
+            "#A51832",
+            "#FFE663",
+            "#6A013A",
+            "#B42F37",
+            "#46014C",
+            "#FFC259",
+            "#D15940",
+            "#88012F"
+          ]
+        }
+      ],
+      "sequentialPalettes": [
+        {
+          "id": "sequential",
+          "label": "Oasis",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#E9F3D1",
+              "offset": 0
+            },
+            {
+              "color": "#D2EAD1",
+              "offset": 10
+            },
+            {
+              "color": "#B4DED2",
+              "offset": 20
+            },
+            {
+              "color": "#72C5D4",
+              "offset": 30
+            },
+            {
+              "color": "#3FB0D5",
+              "offset": 40
+            },
+            {
+              "color": "#2693D1",
+              "offset": 50
+            },
+            {
+              "color": "#1981CE",
+              "offset": 60
+            },
+            {
+              "color": "#1864B4",
+              "offset": 70
+            },
+            {
+              "color": "#184EA0",
+              "offset": 80
+            },
+            {
+              "color": "#173589",
+              "offset": 90
+            },
+            {
+              "color": "#12165C",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "sequential_2",
+          "label": "Santa Anas",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#FFF597",
+              "offset": 0
+            },
+            {
+              "color": "#FFE663",
+              "offset": 10
+            },
+            {
+              "color": "#FFC259",
+              "offset": 20
+            },
+            {
+              "color": "#FFA451",
+              "offset": 30
+            },
+            {
+              "color": "#D15940",
+              "offset": 40
+            },
+            {
+              "color": "#B42F37",
+              "offset": 50
+            },
+            {
+              "color": "#A51832",
+              "offset": 60
+            },
+            {
+              "color": "#88012F",
+              "offset": 70
+            },
+            {
+              "color": "#6A013A",
+              "offset": 80
+            },
+            {
+              "color": "#5D014F",
+              "offset": 90
+            },
+            {
+              "color": "#46014C",
+              "offset": 100
+            }
+          ]
+        }
+      ],
+      "divergingPalettes": [
+        {
+          "id": "diverging",
+          "label": "rainbow",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#12165C",
+              "offset": 0
+            },
+            {
+              "color": "#184EA0",
+              "offset": 12.5
+            },
+            {
+              "color": "#3FB0D5",
+              "offset": 25
+            },
+            {
+              "color": "#B4DED2",
+              "offset": 37.5
+            },
+            {
+              "color": "#FFF597",
+              "offset": 50
+            },
+            {
+              "color": "#FFA451",
+              "offset": 62.5
+            },
+            {
+              "color": "#B42F37",
+              "offset": 75
+            },
+            {
+              "color": "#88012F",
+              "offset": 87.5
+            },
+            {
+              "color": "#5D014F",
+              "offset": 100
+            }
+          ]
+        }
+      ]
+    }, {
+      "id": "financial_chill",
+      "label": "Financial Chill",
+      "categoricalPalettes": [
+        {
+          "id": "main",
+          "label": "Categorical",
+          "type": "discrete",
+          "colors": [
+            "#4EC1D5",
+            "#A5EF54",
+            "#FFCF40",
+            "#9E7FD0",
+            "#58AAFF",
+            "#F64561",
+            "#FFEC85",
+            "#0FE5FF",
+            "#00C872",
+            "#FF7B83",
+            "#C8A7F9",
+            "#FFB076"
+          ]
+        },
+        {
+          "id": "main_2",
+          "label": "Categorical",
+          "type": "discrete",
+          "colors": [
+            "#58AAFF",
+            "#0FE5FF",
+            "#FFCF40",
+            "#FFEC85",
+            "#9E7FD0",
+            "#C8A7F9",
+            "#00C872",
+            "#A5EF54",
+            "#F64561",
+            "#FF7B83",
+            "#4EC1D5",
+            "#FFB076"
+          ]
+        }
+      ],
+      "sequentialPalettes": [
+        {
+          "id": "sequential",
+          "label": "Neutral to Positive",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#FFFFFF",
+              "offset": 0
+            },
+            {
+              "color": "#A5EF54",
+              "offset": 50
+            },
+            {
+              "color": "#00C872",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "sequential_2",
+          "label": "Negative to Neutral",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#F64561",
+              "offset": 0
+            },
+            {
+              "color": "#FFCF40",
+              "offset": 33
+            },
+            {
+              "color": "#FFEC85",
+              "offset": 66
+            },
+            {
+              "color": "#FFFFFF",
+              "offset": 100
+            }
+          ]
+        }
+      ],
+      "divergingPalettes": [
+        {
+          "id": "diverging",
+          "label": "Red to Yellow to Green",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#F64561",
+              "offset": 0
+            },
+            {
+              "color": "#FFCF40",
+              "offset": 25
+            },
+            {
+              "color": "#FFEC85",
+              "offset": 50
+            },
+            {
+              "color": "#A5EF54",
+              "offset": 75
+            },
+            {
+              "color": "#00C872",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "diverging_2",
+          "label": "Red to White to Black",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#F64561",
+              "offset": 0
+            },
+            {
+              "color": "#FFCF40",
+              "offset": 25
+            },
+            {
+              "color": "#FFFFFF",
+              "offset": 50
+            },
+            {
+              "color": "#AEC8C1",
+              "offset": 75
+            },
+            {
+              "color": "#68706E",
+              "offset": 100
+            }
+          ]
+        }
+      ]
+    }, {
+      "id": "boardwalk",
+      "label": "Boardwalk",
+      "categoricalPalettes": [
+        {
+          "id": "main",
+          "label": "Categorical",
+          "type": "discrete",
+          "colors": [
+            "#462C9D",
+            "#FFD95F",
+            "#73D16D",
+            "#E57947",
+            "#75E2E2",
+            "#9175F1",
+            "#E896DB",
+            "#4276BE",
+            "#C2DD67",
+            "#B1399E",
+            "#FBB556",
+            "#3FB0D5",
+            "#B42F37"
+          ]
+        }
+      ],
+      "sequentialPalettes": [
+        {
+          "id": "sequential",
+          "label": "Neutral to Positive",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#FBFCF5",
+              "offset": 0
+            },
+            {
+              "color": "#C2EDEA",
+              "offset": 20
+            },
+            {
+              "color": "#75E2E2",
+              "offset": 40
+            },
+            {
+              "color": "#3FB0D5",
+              "offset": 60
+            },
+            {
+              "color": "#4276BE",
+              "offset": 80
+            },
+            {
+              "color": "#462C9D",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "sequential_2",
+          "label": "Negative to Neutral",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#B42F37",
+              "offset": 0
+            },
+            {
+              "color": "#E57947",
+              "offset": 20
+            },
+            {
+              "color": "#FBB556",
+              "offset": 40
+            },
+            {
+              "color": "#FFD95F",
+              "offset": 60
+            },
+            {
+              "color": "#FFF0A4",
+              "offset": 80
+            },
+            {
+              "color": "#FBFCF5",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "sequential_3",
+          "label": "Yellow to Purple",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#FFF0A1",
+              "offset": 0
+            },
+            {
+              "color": "#FFD95F",
+              "offset": 16.67
+            },
+            {
+              "color": "#FBB556",
+              "offset": 33.33
+            },
+            {
+              "color": "#E57947",
+              "offset": 50
+            },
+            {
+              "color": "#B1399E",
+              "offset": 66.67
+            },
+            {
+              "color": "#462C9D",
+              "offset": 83.33
+            },
+            {
+              "color": "#1C0D61",
+              "offset": 100
+            }
+          ]
+        },
+        {
+          "id": "sequential_4",
+          "label": "Rainbowland",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#462C9D",
+              "offset": 0
+            },
+            {
+              "color": "#4276BE",
+              "offset": 12.5
+            },
+            {
+              "color": "#3FB0D5",
+              "offset": 25
+            },
+            {
+              "color": "#73D16D",
+              "offset": 37.5
+            },
+            {
+              "color": "#C2DD67",
+              "offset": 50
+            },
+            {
+              "color": "#FFD95F",
+              "offset": 62.5
+            },
+            {
+              "color": "#FBB556",
+              "offset": 75
+            },
+            {
+              "color": "#E57947",
+              "offset": 87.5
+            },
+            {
+              "color": "#B42F37",
+              "offset": 100
+            }
+          ]
+        }
+      ],
+      "divergingPalettes": [
+        {
+          "id": "diverging",
+          "label": "Diverging",
+          "type": "continuous",
+          "stops": [
+            {
+              "color": "#B42F37",
+              "offset": 0
+            },
+            {
+              "color": "#E57947",
+              "offset": 10
+            },
+            {
+              "color": "#FBB556",
+              "offset": 20
+            },
+            {
+              "color": "#FFD95F",
+              "offset": 30
+            },
+            {
+              "color": "#FFF0A4",
+              "offset": 40
+            },
+            {
+              "color": "#FBFCF5",
+              "offset": 50
+            },
+            {
+              "color": "#C2EDEA",
+              "offset": 60
+            },
+            {
+              "color": "#75E2E2",
+              "offset": 70
+            },
+            {
+              "color": "#3FB0D5",
+              "offset": 80
+            },
+            {
+              "color": "#4276BE",
+              "offset": 90
+            },
+            {
+              "color": "#462C9D",
+              "offset": 100
+            }
+          ]
+        }
+      ]
+    }, {
+      "id": "legacy",
+      "label": "Legacy",
+      "categoricalPalettes": [
+        {
+          "id": "looker_classic",
+          "label": "Looker Classic",
+          "type": "discrete",
+          "colors": [
+            "#62bad4",
+            "#a9c574",
+            "#929292",
+            "#9fdee0",
+            "#1f3e5a",
+            "#90c8ae",
+            "#92818d",
+            "#c5c6a6",
+            "#82c2ca",
+            "#cee0a0",
+            "#928fb4",
+            "#9fc190"
+          ]
+        }, {
+          "id": "santa_cruz",
+          "label": "Santa Cruz",
+          "type": "discrete",
+          "colors": [
+            "#5245ed",
+            "#ed6168",
+            "#1ea8df",
+            "#353b49",
+            "#49cec1",
+            "#b3a0dd",
+            "#db7f2a",
+            "#706080",
+            "#a2dcf3",
+            "#776fdf",
+            "#e9b404",
+            "#635189"
+          ]
+        }, {
+          "id": "mixed_dark",
+          "label": "Mixed Dark",
+          "type": "discrete",
+          "colors": [
+            "#a6cee3",
+            "#1f78b4",
+            "#b2df8a",
+            "#33a02c",
+            "#fb9a99",
+            "#e31a1c",
+            "#fdbf6f",
+            "#ff7f00",
+            "#cab2d6",
+            "#6a3d9a",
+            "#edbc0e",
+            "#b15928"
+          ]
+        }, {
+          "id": "mixed_pastels",
+          "label": "Mixed Pastels",
+          "type": "discrete",
+          "colors": [
+            "#8dd3c7",
+            "#ffed6f",
+            "#bebada",
+            "#fb8072",
+            "#80b1d3",
+            "#fdb462",
+            "#b3de69",
+            "#fccde5",
+            "#d9d9d9",
+            "#bc80bd",
+            "#ccebc5",
+            "#a3a3ff"
+          ]
+        }, {
+          "id": "mixed_neutrals",
+          "label": "Mixed Neutrals",
+          "type": "discrete",
+          "colors": [
+            "#294987",
+            "#5a1038",
+            "#ff947c",
+            "#1f6b62",
+            "#764173",
+            "#910303",
+            "#b2947c",
+            "#192d54",
+            "#a31e67",
+            "#a16154",
+            "#0f544b",
+            "#ffd9ba"
+          ]
+        }, {
+          "id": "random",
+          "label": "Random",
+          "type": "discrete",
+          "colors": [
+            "#265780",
+            "#D98541",
+            "#C53DCC",
+            "#33992E",
+            "#36B38D",
+            "#A2BF39",
+            "#5A3DCC",
+            "#8a0f3d",
+            "#ff7aa3",
+            "#2d89bd",
+            "#8f09b0",
+            "#d94141"
+          ]
+        }, {
+          "id": "tomato_to_steel_blue",
+          "label": "Tomato to Steel Blue",
+          "type": "discrete",
+          "colors": [
+            "#F16358",
+            "#E0635E",
+            "#D06464",
+            "#BF656B",
+            "#AF6671",
+            "#9F6777",
+            "#8E687E",
+            "#7E6984",
+            "#6E6A8A",
+            "#5D6B91",
+            "#4D6C97",
+            "#3D6D9E"
+          ]
+        }, {
+          "id": "green_to_red",
+          "label": "Green to Red",
+          "type": "discrete",
+          "colors": [
+            "#7FCDAE",
+            "#7ED09C",
+            "#7DD389",
+            "#85D67C",
+            "#9AD97B",
+            "#B1DB7A",
+            "#CADF79",
+            "#E2DF78",
+            "#E5C877",
+            "#E7AF75",
+            "#EB9474",
+            "#EE7772"
+          ]
+        }, {
+          "id": "fuchsia_to_green",
+          "label": "Fuchsia to Green",
+          "type": "discrete",
+          "colors": [
+            "#8d4074",
+            "#a15e8a",
+            "#b57ba0",
+            "#c899b7",
+            "#dcb7cf",
+            "#efd7e7",
+            "#e0e9cc",
+            "#bcd0a6",
+            "#97b780",
+            "#749e5b",
+            "#508637",
+            "#286f0f"
+          ]
+        }, {
+          "id": "black_to_gray",
+          "label": "Black to Gray",
+          "type": "discrete",
+          "colors": [
+            "#000000",
+            "#191919",
+            "#292929",
+            "#3c3c3c",
+            "#4e4e4e",
+            "#626262",
+            "#777777",
+            "#8d8d8d",
+            "#a3a3a3",
+            "#b9b9b9",
+            "#d0d0d0",
+            "#e7e7e7"
+          ]
+        }
+      ],
+      "sequentialPalettes": [],
+      "divergingPalettes": []
+    }
+  ]
+}

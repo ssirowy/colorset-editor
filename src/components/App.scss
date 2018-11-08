@@ -1,0 +1,25 @@
+.App {
+  height: 100vh;
+}
+
+header {
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  height: 50px;
+  width: 100%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto;
+    height: calc(100vh - 50px);
+}
+
+section {
+    align-items: center;
+    background-color: #F1FAFF;
+    display: flex;
+    justify-content: center;
+}
