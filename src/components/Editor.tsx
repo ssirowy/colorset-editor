@@ -7,12 +7,11 @@ import {
 
 import {
   ColorCollectionType,
-  ContinuousPaletteType,
-  DiscretePaletteType,
 } from '../models/types'
 
-import { ContinuousPalette } from '../components/ContinuousPalette'
-import { DiscretePalette } from '../components/DiscretePalette'
+// import { ContinuousPalette } from '../components/ContinuousPalette'
+// import { DiscretePalette } from '../components/DiscretePalette'
+import { PaletteList } from '../components/PaletteList'
 
 interface EditorProps {
   collection: ColorCollectionType
@@ -26,29 +25,11 @@ export const Editor: React.SFC<EditorProps> = ({ collection }) => {
   const label = collection.label
 
   return (
-    <div>
+    <Box display="flex" alignItems="center" flexDirection="column">
       <Heading level="1">{label}</Heading>
-      <Box p="large" display="flex" width="300px" flexWrap="wrap" justifyContent="space-between">
-        {
-          cp.map((palette: DiscretePaletteType, index: number) =>(
-        <DiscretePalette key={index} palette={palette} />
-          ))
-        }
-      </Box>
-      <Box p="large" display="flex" width="300px" flexWrap="wrap" justifyContent="space-between">
-        {
-          sp.map((palette: ContinuousPaletteType, index: number) =>(
-        <ContinuousPalette key={index} palette={palette} />
-          ))
-        }
-      </Box>
-      <Box p="large" display="flex" width="300px" flexWrap="wrap" justifyContent="space-between">
-        {
-          dp.map((palette: ContinuousPaletteType, index: number) =>(
-        <ContinuousPalette key={index} palette={palette} />
-          ))
-        }
-      </Box>
-    </div>
+      <PaletteList palettes={cp} name="Categorical" />
+      <PaletteList palettes={sp} name="Sequential" />
+      <PaletteList palettes={dp} name="Diverging" />
+    </Box>
   )
 }
