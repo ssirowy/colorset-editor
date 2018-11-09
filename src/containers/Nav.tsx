@@ -6,6 +6,7 @@ import { selectColorSet } from '../store/actions'
 
 const mapStateToProps = ( state: ApplicationState ) => ({
   collections: state.collections,
+  selected: state.selectedCollection
 })
 ​
 // Dispatch props

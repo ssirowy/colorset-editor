@@ -56,13 +56,13 @@ const cssGradientForColors  = (colors: string[], direction: string, quantize = f
   return `${legacy};${standard};`
 }
 
-export const ContinuousPalette = (props: ContinuousPaletteProps ) => {
+export const ContinuousPalette: React.SFC<ContinuousPaletteProps> = ({ palette }) => {
 
   const numPerRow = 6
   const width = `${numPerRow*swatchSize}px`
   const height = `${swatchSize*2}px`
 
-  const cssString = cssGradientForColors(props.palette.stops.map((stop: ColorStop) => stop.color), 'right')
+  const cssString = cssGradientForColors(palette.stops.map((stop: ColorStop) => stop.color), 'right')
 
   const gradientStyle = {
     background: cssString.split(';')[1].split(':')[1]

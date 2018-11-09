@@ -10,7 +10,7 @@ export const Header = () => (
   <header>
     <div>
       <ToggleDashboardButton>Toggle dashboard/editor</ToggleDashboardButton>
-      <Button>Copy JSON</Button>
+      <Button>Copy to clipboard</Button>
     </div>
   </header>
 )

@@ -3,27 +3,25 @@ import * as React from 'react'
 import {
   Box,
   List,
-  ListItem
 } from 'looker-lens'
 
-/* tslint:disable */
+import { ColorSetItem } from './ColorSetItem'
 
 import { ColorCollectionType } from '../models/types'
 
 // Todo list interface
 interface ColorSetListProps {
   collections: ColorCollectionType[]
+  selected: string
   collectionClicked: any
 }
 
-export const ColorSetList = (props: ColorSetListProps) => (
+export const ColorSetList: React.SFC<ColorSetListProps> = ({ collections, ...props }) => (
   <Box mt='medium'>
     <List>
       {
-        props.collections.map((collection: ColorCollectionType, index: number) => (
-          <ListItem key={index} onClick={() => {props.collectionClicked(collection.id)}}>
-            {collection.label}
-          </ListItem>
+        collections.map((collection: ColorCollectionType, index: number) => (
+            <ColorSetItem key={index} collection={collection} {...props} />
         ))
       }
     </List>

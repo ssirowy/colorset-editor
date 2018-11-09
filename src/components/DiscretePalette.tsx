@@ -12,11 +12,12 @@ export interface  DiscretePaletteProps{
   palette: DiscretePaletteType
 }
 
-export const DiscretePalette = (props: DiscretePaletteProps ) => {
+
+export const DiscretePalette: React.SFC<DiscretePaletteProps> = ({ palette }) => {
 
   const numPerRow = 6
   const width = `${numPerRow*swatchSize}px`
-  const colors = sampleDiscrete(props.palette, numPerRow * 2)
+  const colors = sampleDiscrete(palette, numPerRow * 2)
 
   return (
       <Box display="flex" flexWrap="wrap" width={width}>
