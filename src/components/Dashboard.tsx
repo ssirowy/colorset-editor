@@ -25,8 +25,8 @@ export const Dashboard: React.SFC<DashboardProps> = ({ collection }) => {
     flexWrap: 'wrap',
   } as any
 
-  const createCard = () => (
-      <Card style={cardStyle}>
+  const createCard = (index: number) => (
+      <Card key={index} style={cardStyle}>
       <CardMedia image="https://media.licdn.com/dms/image/C4D03AQFjXbiPUWGDVw/profile-displayphoto-shrink_200_200/0?e=1545264000&v=beta&t=lLMeS4uSP3Bhc3NrwPDMRF82hb5Gjppr7aEbkyt5gMc" title="Bill 1" />
       <CardContent>
         <Heading>Dashboarding is my forte</Heading>
@@ -39,7 +39,7 @@ export const Dashboard: React.SFC<DashboardProps> = ({ collection }) => {
   return (
     <div style={divStyle}>
       {
-        numCards.map(() => createCard())
+        numCards.map((val, index) => createCard(index))
       }
     </div>
   )
