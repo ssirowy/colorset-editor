@@ -1,18 +1,18 @@
-import * as React from 'react';
-import './App.css';
+import * as React from 'react'
+import './App.css'
 
 // import copy from 'copy-to-clipboard'
 
-import { Editor } from '../containers/Editor'
-import { Header } from '../containers/Header'
+import { Header } from '../components/Header'
 import { Nav } from '../containers/Nav'
+import { Section } from '../containers/Section'
 
 export const App =() => (
   <div>
     <Header />
     <main>
       <Nav />
-      <Editor />
+      <Section />
     </main>
   </div>
 )

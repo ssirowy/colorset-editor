@@ -1,7 +1,8 @@
 import {
   LOAD_COLORSET,
-//  SAVE_COLORSET,
+  //  SAVE_COLORSET,
   SELECT_COLORSET,
+  SHOW_DASHBOARD,
 } from './actions'
 
 // import { ColorCollectionType } from '../models/types'
@@ -26,4 +27,13 @@ export const selectedCollection = (state = null, action: any) => {
 
 export const json = (state = '', action: any) => {
   return state
+}
+
+export const showDashboard = (state = true, action: any) => {
+  switch(action.type) {
+    case SHOW_DASHBOARD:
+      return !state
+    default:
+      return state
+  }
 }

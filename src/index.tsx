@@ -4,15 +4,12 @@ import { App } from './components/App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-// Data for color collections.
+// Default data for color collections.
 import FIXTURES from './data/color_collections.json'
 
-// import { ColorCollectionType } from './models/types'
-
-// redux stuff
 import { Provider } from 'react-redux'
 
-import {configureStore } from './configureStore'
+import { configureStore } from './configureStore'
 
 // Lens components
 import {
@@ -24,7 +21,8 @@ const collections = FIXTURES.colorCollections
 const defaultState = {
   collections,
   selectedCollection: collections[0].id,
-  json: ''
+  json: '',
+  showDashboard: false
 }
 
 const store = configureStore(defaultState)

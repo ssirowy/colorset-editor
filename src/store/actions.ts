@@ -16,6 +16,7 @@ export const ADD_DIVERGING_PALETTE = 'ADD_DIVERGING_PALETTE'
 export const REMOVE_DIVERGING_PALETTE = 'REMOVE_DIVERGING_PALETTE'
 export const UPDATE_DIVERGING_PALETTE = 'UPDATE_DIVERGING_PALETTE'
 
+export const SHOW_DASHBOARD = 'SHOW_DASHBOARD'
 
 export const loadJSON = (json: string) => ({
   json,
@@ -29,4 +30,9 @@ export const saveJSON = () => ({
 export const selectColorSet = (id: string) => ({
   id,
   type: SELECT_COLORSET
+})
+
+export const showDashboard = (show: boolean) => ({
+  show,
+  type: SHOW_DASHBOARD
 })
