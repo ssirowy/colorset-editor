@@ -8,8 +8,9 @@ import { ColorCollectionType } from '../models/types'
 import {
   collections,
   json,
+  numSeries,
   selectedCollection,
-  showDashboard
+  showDashboard,
 } from './reducers'
 
 // The top-level state object
@@ -18,6 +19,7 @@ export interface ApplicationState {
   selectedCollection: string | null
   json: string,
   showDashboard: boolean,
+  numSeries: number,
 //   showLoadUx: boolean,
 }
 
@@ -25,5 +27,6 @@ export const reducers: Reducer<ApplicationState> = combineReducers<ApplicationSt
   collections,
   selectedCollection,
   json,
-  showDashboard
+  showDashboard,
+  numSeries
 });

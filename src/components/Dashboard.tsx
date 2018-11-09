@@ -1,45 +1,29 @@
 import * as React from 'react'
 import { ColorCollectionType } from '../models/types'
+import { DiscretePaletteLineup } from './DiscretePaletteLineup'
 
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Heading,
-} from 'looker-lens'
-
+import { Heading } from 'looker-lens'
 
 interface DashboardProps {
   collection: ColorCollectionType
+  numSeries: number
 }
 
-export const Dashboard: React.SFC<DashboardProps> = ({ collection }) => {
-  const cardStyle = {
-    width: '300px',
-    marginRight: '16px',
-    marginBottom: '16px',
-  }
-
+export const Dashboard: React.SFC<DashboardProps> = ({ collection, numSeries }) => {
   const divStyle = {
     display: 'flex',
-    flexWrap: 'wrap',
+    'flex-direction': 'column',
   } as any
-
-  const createCard = (index: number) => (
-      <Card key={index} style={cardStyle}>
-      <CardMedia image="https://media.licdn.com/dms/image/C4D03AQFjXbiPUWGDVw/profile-displayphoto-shrink_200_200/0?e=1545264000&v=beta&t=lLMeS4uSP3Bhc3NrwPDMRF82hb5Gjppr7aEbkyt5gMc" title="Bill 1" />
-      <CardContent>
-        <Heading>Dashboarding is my forte</Heading>
-      </CardContent>
-      </Card>
-  )
-
-  const numCards = Array(12).fill(0)
 
   return (
     <div style={divStyle}>
       {
-        numCards.map((val, index) => createCard(index))
+        collection.categoricalPalettes.map((palette) => (
+          <div>
+            <Heading>{palette.label}</Heading>
+            <DiscretePaletteLineup palette={palette} numSeries={numSeries} />
+          </div>
+        ))
       }
     </div>
   )
