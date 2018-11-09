@@ -18,6 +18,10 @@ export const UPDATE_DIVERGING_PALETTE = 'UPDATE_DIVERGING_PALETTE'
 
 export const SHOW_DASHBOARD = 'SHOW_DASHBOARD'
 
+import {
+  defaultColorSet
+} from '../utils/colorsets'
+
 export const loadJSON = (json: string) => ({
   json,
   type: LOAD_COLORSET
@@ -29,6 +33,7 @@ export const saveJSON = () => ({
 
 export const addColorSet = () => ({
   type: ADD_COLORSET,
+  collection: defaultColorSet(),
 })
 
 export const selectColorSet = (id: string) => ({

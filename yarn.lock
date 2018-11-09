@@ -69,6 +69,12 @@
   version "3.0.6"
   resolved "https://nexusrepo.looker.com/repository/looker-npm-group/@types/styled-system/-/styled-system-3.0.6.tgz#b7fa8787662f8ff0c9ba17ea1569f5afe2c7cb11"
 
+"@types/uuid@^3.4.4":
+  version "3.4.4"
+  resolved "https://nexusrepo.looker.com/repository/looker-npm-group/@types/uuid/-/uuid-3.4.4.tgz#7af69360fa65ef0decb41fd150bf4ca5c0cefdf5"
+  dependencies:
+    "@types/node" "*"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://nexusrepo.looker.com/repository/looker-npm-group/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -7754,7 +7760,7 @@ utils-merge@1.0.1:
 
 uuid@^3.0.1, uuid@^3.3.2:
   version "3.3.2"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  resolved "https://nexusrepo.looker.com/repository/looker-npm-group/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/react-redux": "^6.0.9",
+    "@types/uuid": "^3.4.4",
     "copy-to-clipboard": "^3.0.8",
     "looker-lens": "^0.0.1-alpha.21",
     "moment": "^2.22.2",
@@ -18,7 +19,8 @@
     "redux": "^4.0.1",
     "styled-system": "^3.1.6",
     "tslint-config-prettier": "^1.15.0",
-    "tslint-config-standard": "^8.0.1"
+    "tslint-config-standard": "^8.0.1",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
