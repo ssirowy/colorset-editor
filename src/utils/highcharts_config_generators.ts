@@ -14,6 +14,7 @@ export const areaChart = (palette: DiscretePaletteType, numSeries: number) => {
     },
     plotOptions: {
       area: {
+        animation: false,
         fillOpacity: 0.40
       },
       series: {
