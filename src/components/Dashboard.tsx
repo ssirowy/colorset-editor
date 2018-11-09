@@ -12,14 +12,14 @@ interface DashboardProps {
 export const Dashboard: React.SFC<DashboardProps> = ({ collection, numSeries }) => {
   const divStyle = {
     display: 'flex',
-    'flex-direction': 'column',
+    flexDirection: 'column',
   } as any
 
   return (
     <div style={divStyle}>
       {
-        collection.categoricalPalettes.map((palette) => (
-          <div>
+        collection.categoricalPalettes.map((palette, index) => (
+          <div key={index}>
             <Heading>{palette.label}</Heading>
             <DiscretePaletteLineup palette={palette} numSeries={numSeries} />
           </div>
