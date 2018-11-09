@@ -1,4 +1,5 @@
 import {
+  ADD_COLORSET,
   CHANGE_NUM_SERIES,
   LOAD_COLORSET,
   //  SAVE_COLORSET,
@@ -8,8 +9,10 @@ import {
 
 // import { ColorCollectionType } from '../models/types'
 
-export const collections = (state = null, action: any) => {
+export const collections = (state = [], action: any) => {
   switch (action.type) {
+    case ADD_COLORSET:
+      return [...state, action.collection]
     case LOAD_COLORSET:
       return JSON.parse(action.json).colorCollections
     default:
@@ -17,10 +20,12 @@ export const collections = (state = null, action: any) => {
   }
 }
 
-export const selectedCollection = (state = null, action: any) => {
+export const selectedCollection = (state = '', action: any) => {
   switch (action.type) {
     case SELECT_COLORSET:
       return action.id
+    case ADD_COLORSET:
+      return action.collection.id
     default:
       return state
   }

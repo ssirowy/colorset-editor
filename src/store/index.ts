@@ -15,8 +15,8 @@ import {
 
 // The top-level state object
 export interface ApplicationState {
-  collections: ColorCollectionType[] | null
-  selectedCollection: string | null
+  collections: ColorCollectionType[],
+  selectedCollection: string,
   json: string,
   showDashboard: boolean,
   numSeries: number,

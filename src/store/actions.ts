@@ -20,6 +20,10 @@ export const SHOW_DASHBOARD = 'SHOW_DASHBOARD'
 
 export const CHANGE_NUM_SERIES = 'CHANGE_NUM_SERIES'
 
+import {
+  defaultColorSet
+} from '../utils/colorsets'
+
 export const loadJSON = (json: string) => ({
   json,
   type: LOAD_COLORSET
@@ -27,6 +31,11 @@ export const loadJSON = (json: string) => ({
 
 export const saveJSON = () => ({
   type: SAVE_COLORSET
+})
+
+export const addColorSet = () => ({
+  type: ADD_COLORSET,
+  collection: defaultColorSet(),
 })
 
 export const selectColorSet = (id: string) => ({

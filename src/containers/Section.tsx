@@ -27,7 +27,7 @@ const InternalSection: React.SFC<SectionProps> = ({ showDashboard, collection, n
 
 const mapStateToProps = ( state: ApplicationState ) => ({
   showDashboard: state.showDashboard,
-  collection: state.collections!.find((collection: ColorCollectionType) => collection.id === state.selectedCollection!),
+  collection: state.collections.find((collection: ColorCollectionType) => collection.id === state.selectedCollection),
   numSeries: state.numSeries
 })
 
