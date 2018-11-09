@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import {
   Box,
+  Button,
   Heading
 } from 'looker-lens'
 
@@ -30,6 +31,7 @@ export const Editor: React.SFC<EditorProps> = ({ collection }) => {
       <PaletteList palettes={cp} name="Categorical" />
       <PaletteList palettes={sp} name="Sequential" />
       <PaletteList palettes={dp} name="Diverging" />
+      <Button variant='transparent' color='danger'>Remove color set</Button>
     </Box>
   )
 }

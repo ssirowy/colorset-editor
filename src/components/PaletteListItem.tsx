@@ -3,15 +3,14 @@ import * as React from 'react'
 import './PaletteListItem.css'
 
 import {
-  Box
-} from 'looker-lens';
-import {
   ContinuousPaletteType,
   DiscretePaletteType,
 } from '../models/types'
 
 import { ContinuousPalette } from './ContinuousPalette'
 import { DiscretePalette } from './DiscretePalette'
+
+import { PaletteEditor } from './PaletteEditor'
 
 interface PaletteListItemProps {
   palette: ContinuousPaletteType | DiscretePaletteType
@@ -54,7 +53,7 @@ export class PaletteListItem extends React.Component<PaletteListItemProps, Palet
       </div>
         </div>
         {
-          expanded && <Box>Expanded state</Box>
+          expanded && <PaletteEditor palette={palette} />
         }
         </li>
     )
