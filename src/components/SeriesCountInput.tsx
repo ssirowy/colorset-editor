@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { ApplicationState } from 'src/store';
 import { setNumSeries } from 'src/store/actions';
 
-import { InputText } from 'looker-lens/dist'
+import { InputText, Text } from 'looker-lens/dist'
 
 interface SeriesCountInputProps {
   numSeries: number
@@ -11,8 +11,16 @@ interface SeriesCountInputProps {
 }
 
 const SeriesCountInputPresentation: React.SFC<SeriesCountInputProps> = ({ numSeries, onChange }) => {
+  const props = {
+    max: 12,
+    min: 1,
+    type: 'number'
+  }
   return (
-    <InputText value={`${numSeries}`} onChange={onChange} />
+    <div>
+      <Text>Series Count</Text>
+      <InputText {...props} value={`${numSeries}`} onChange={onChange} />
+    </div>
   )
 }
 
