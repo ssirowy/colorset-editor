@@ -27,6 +27,10 @@ export const saveJSON = () => ({
   type: SAVE_COLORSET
 })
 
+export const addColorSet = () => ({
+  type: ADD_COLORSET,
+})
+
 export const selectColorSet = (id: string) => ({
   id,
   type: SELECT_COLORSET
