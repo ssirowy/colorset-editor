@@ -1,5 +1,6 @@
 import {
   ADD_COLORSET,
+  CHANGE_NUM_SERIES,
   LOAD_COLORSET,
   //  SAVE_COLORSET,
   SELECT_COLORSET,
@@ -38,6 +39,15 @@ export const showDashboard = (state = true, action: any) => {
   switch(action.type) {
     case SHOW_DASHBOARD:
       return !state
+    default:
+      return state
+  }
+}
+
+export const numSeries = (state = 12, action: any) => {
+  switch (action.type) {
+    case CHANGE_NUM_SERIES:
+      return action.numSeries
     default:
       return state
   }

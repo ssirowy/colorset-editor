@@ -18,6 +18,8 @@ export const UPDATE_DIVERGING_PALETTE = 'UPDATE_DIVERGING_PALETTE'
 
 export const SHOW_DASHBOARD = 'SHOW_DASHBOARD'
 
+export const CHANGE_NUM_SERIES = 'CHANGE_NUM_SERIES'
+
 import {
   defaultColorSet
 } from '../utils/colorsets'
@@ -44,4 +46,9 @@ export const selectColorSet = (id: string) => ({
 export const showDashboard = (show: boolean) => ({
   show,
   type: SHOW_DASHBOARD
+})
+
+export const setNumSeries = (numSeries: number) => ({
+  numSeries,
+  type: CHANGE_NUM_SERIES
 })
