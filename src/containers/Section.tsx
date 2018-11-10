@@ -8,6 +8,9 @@ import { SelectACollection } from '../components/SelectACollection'
 import { ApplicationState } from '../store'
 
 import {
+  addCategoricalPalette,
+  addDivergingPalette,
+  addSequentialPalette,
   removeColorSet,
   updateColorSetTitle,
 } from '../store/actions'
@@ -22,12 +25,13 @@ interface SectionProps {
   removeCollection: any
   updateCollectionTitle: any
   showDashboard: boolean
+  addPaletteClicked: any
 }
 ​
-const InternalSection: React.SFC<SectionProps> = ({ showDashboard, collection, numSeries, removeCollection, updateCollectionTitle }) => (
+const InternalSection: React.SFC<SectionProps> = ({ showDashboard, collection, numSeries, removeCollection, updateCollectionTitle, addPaletteClicked }) => (
   <section>
     {
-      !showDashboard && collection && <Editor collection={collection} removeCollection={removeCollection} collectionTitleChanged={updateCollectionTitle}/>
+      !showDashboard && collection && <Editor collection={collection} removeCollection={removeCollection} collectionTitleChanged={updateCollectionTitle} addPaletteClicked={addPaletteClicked}/>
     }
     {
       !showDashboard && !collection && <SelectACollection />
@@ -39,6 +43,23 @@ const InternalSection: React.SFC<SectionProps> = ({ showDashboard, collection, n
 )
 
 const mapDispatchToProps = (dispatch: any) => ({
+  addPaletteClicked: (id: string,  name: string) => {
+
+    let fn
+    switch(name) {
+      case 'diverging':
+        fn = addDivergingPalette
+        break
+      case 'sequential':
+        fn = addSequentialPalette
+        break
+      case 'categorical':
+      default:
+        fn = addCategoricalPalette
+    }
+
+    dispatch(fn(id))
+  },
   updateCollectionTitle: (id: string, title: string) => {
     dispatch(updateColorSetTitle(id, title))
   },

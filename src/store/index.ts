@@ -7,6 +7,7 @@ import { ColorCollectionType } from '../models/types'
 
 import {
   collections,
+  copiedToClipboard,
   json,
   numSeries,
   selectedCollection,
@@ -20,6 +21,7 @@ export interface ApplicationState {
   json: string,
   showDashboard: boolean,
   numSeries: number,
+  copiedToClipboard: boolean
 //   showLoadUx: boolean,
 }
 
@@ -28,5 +30,6 @@ export const reducers: Reducer<ApplicationState> = combineReducers<ApplicationSt
   selectedCollection,
   json,
   showDashboard,
-  numSeries
+  numSeries,
+  copiedToClipboard
 });

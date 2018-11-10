@@ -37,25 +37,24 @@ export class PaletteListItem extends React.Component<PaletteListItemProps, Palet
   }
 
   public render() {
-
     const { palette } = this.props
     const { expanded } = this.state
-
     const isContinuous = (palette as any).stops !== undefined
+
     return (
-        <li className="palette-list-item" onClick={this.toggleExpanded}>
-        <div className="item-content">
-        {
-          isContinuous ? <ContinuousPalette palette={palette as ContinuousPaletteType} /> : <DiscretePalette palette={palette as DiscretePaletteType} />
-        }
-        <div className="label">
-          {palette.label}
-      </div>
+      <li className="palette-list-item">
+        <div className="item-content" onClick={this.toggleExpanded}>
+          {
+            isContinuous ? <ContinuousPalette palette={palette as ContinuousPaletteType} /> : <DiscretePalette palette={palette as DiscretePaletteType} />
+          }
+          <div className="label">
+            {palette.label}
+          </div>
         </div>
         {
           expanded && <PaletteEditor palette={palette} />
         }
-        </li>
+      </li>
     )
   }
 }

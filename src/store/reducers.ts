@@ -1,9 +1,12 @@
 import {
+  ADD_CATEGORICAL_PALETTE,
   ADD_COLORSET,
+  ADD_DIVERGING_PALETTE,
+  ADD_SEQUENTIAL_PALETTE,
   CHANGE_NUM_SERIES,
   LOAD_COLORSET,
   REMOVE_COLORSET,
-  //  SAVE_COLORSET,
+  SAVE_COLORSET,
   SELECT_COLORSET,
   SHOW_DASHBOARD,
   UPDATE_COLORSET_TITLE
@@ -13,8 +16,32 @@ import { ColorCollectionType } from '../models/types'
 
 export const collections = (state = [], action: any) => {
   switch (action.type) {
+    case ADD_CATEGORICAL_PALETTE:
+      return state.map((collection: ColorCollectionType) => {
+        if (collection.id !== action.id) return collection
+        return {
+          ...collection,
+          categoricalPalettes: [...collection.categoricalPalettes, action.palette]
+        }
+      })
     case ADD_COLORSET:
       return [...state, action.collection]
+    case ADD_DIVERGING_PALETTE:
+      return state.map((collection: ColorCollectionType) => {
+        if (collection.id !== action.id) return collection
+        return {
+          ...collection,
+          divergingPalettes: [...collection.divergingPalettes, action.palette]
+        }
+      })
+    case ADD_SEQUENTIAL_PALETTE:
+      return state.map((collection: ColorCollectionType) => {
+        if (collection.id !== action.id) return collection
+        return {
+          ...collection,
+          sequentialPalettes: [...collection.sequentialPalettes, action.palette]
+        }
+      })
     case LOAD_COLORSET:
       return JSON.parse(action.json).colorCollections
     case REMOVE_COLORSET:
@@ -59,7 +86,7 @@ export const showDashboard = (state = true, action: any) => {
   }
 }
 
-export const numSeries = (state = 12, action: any) => {
+export const numSeries = (state = 3, action: any) => {
   switch (action.type) {
     case CHANGE_NUM_SERIES:
       return action.numSeries
@@ -67,3 +94,5 @@ export const numSeries = (state = 12, action: any) => {
       return state
   }
 }
+
+export const copiedToClipboard = (state = false, action: any) => action.type === SAVE_COLORSET
