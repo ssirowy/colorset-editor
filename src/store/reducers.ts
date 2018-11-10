@@ -6,6 +6,7 @@ import {
   //  SAVE_COLORSET,
   SELECT_COLORSET,
   SHOW_DASHBOARD,
+  UPDATE_COLORSET_TITLE
 } from './actions'
 
 import { ColorCollectionType } from '../models/types'
@@ -18,6 +19,15 @@ export const collections = (state = [], action: any) => {
       return JSON.parse(action.json).colorCollections
     case REMOVE_COLORSET:
       return state.filter((collection: ColorCollectionType) => collection.id !== action.id)
+    case UPDATE_COLORSET_TITLE:
+      return state.map((collection: ColorCollectionType) => {
+        if (collection.id !== action.id) return collection
+
+        return {
+          ...collection,
+          label: action.title
+        }
+      })
     default:
       return state
   }

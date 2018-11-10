@@ -3,7 +3,6 @@ import * as React from 'react'
 import {
   Box,
   Button,
-  Heading
 } from 'looker-lens'
 
 import {
@@ -15,9 +14,10 @@ import { PaletteList } from '../components/PaletteList'
 interface EditorProps {
   collection: ColorCollectionType
   removeCollection: any
+  collectionTitleChanged: any
 }
 
-export const Editor: React.SFC<EditorProps> = ({ collection, removeCollection }) => {
+export const Editor: React.SFC<EditorProps> = ({ collection, removeCollection, collectionTitleChanged }) => {
 
   const cp = collection.categoricalPalettes
   const sp = collection.sequentialPalettes
@@ -26,9 +26,18 @@ export const Editor: React.SFC<EditorProps> = ({ collection, removeCollection })
 
   const onClick = () => removeCollection(collection.id)
 
+  const headerInputStyle = {
+    width: '600px',
+    height: '32px',
+    fontSize: '24px',
+    marginBottom: '16px',
+  }
+
+  const onTitleChange = (event: any) => collectionTitleChanged(collection.id, event.target.value)
+
   return (
     <Box display="flex" alignItems="center" flexDirection="column">
-      <Heading level="1">{label}</Heading>
+      <input style={headerInputStyle} value={label} onChange={onTitleChange}/>
       <PaletteList palettes={cp} name="Categorical" />
       <PaletteList palettes={sp} name="Sequential" />
       <PaletteList palettes={dp} name="Diverging" />

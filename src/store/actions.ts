@@ -4,6 +4,7 @@ export const SAVE_COLORSET = 'SAVE_COLORSET'
 export const ADD_COLORSET = 'ADD_COLORSET'
 export const REMOVE_COLORSET = 'REMOVE_COLORSET'
 export const SELECT_COLORSET = 'SELECT_COLORSET'
+export const UPDATE_COLORSET_TITLE = 'UPDATE_COLORSET_TITLE'
 
 export const ADD_CATEGORICAL_PALETTE = 'ADD_CATEGORICAL_PALETTE'
 export const REMOVE_CATEGORICAL_PALETTE = 'REMOVE_CATEGORICAL_PALETTE'
@@ -56,4 +57,10 @@ export const showDashboard = (show: boolean) => ({
 export const setNumSeries = (numSeries: number) => ({
   numSeries,
   type: CHANGE_NUM_SERIES
+})
+
+export const updateColorSetTitle = (id: string, title: string) => ({
+  id,
+  title,
+  type: UPDATE_COLORSET_TITLE
 })

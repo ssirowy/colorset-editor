@@ -1,12 +1,19 @@
 import * as React from 'react'
 
 import {
-  Box,
-  Heading
+  Flex,
+  FlexItem,
+  Text
 } from 'looker-lens'
 
+const makeBig = {
+  height: '100%',
+}
+
 export const SelectACollection: React.SFC<{}> = () => (
-  <Box display="flex" justifyContent="center" alignItems="center">
-    <Heading>Select a collection</Heading>
-  </Box>
+    <Flex style={makeBig} justifyContent="center" alignItems="center">
+    <FlexItem>
+    <Text size="4">Select a collection to the left</Text>
+    </FlexItem>
+  </Flex>
 )

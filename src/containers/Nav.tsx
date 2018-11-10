@@ -28,8 +28,12 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
 })
 
+const navStyle = {
+  borderRight: '2px solid #e4e5e6',
+}
+
 const InternalNav: React.SFC<any> = ({ addClicked, collections, selected, collectionClicked }) => (
-  <Box mb="medium" display="flex" flexDirection="column" justifyContent="space-between">
+  <Box style={navStyle} mb="medium" display="flex" flexDirection="column" justifyContent="space-between">
     <ColorSetList collections={collections} selected={selected} collectionClicked={collectionClicked} />
     <Button variant='transparent' onClick={addClicked}>Add color set</Button>
   </Box>
