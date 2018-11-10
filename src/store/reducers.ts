@@ -2,12 +2,13 @@ import {
   ADD_COLORSET,
   CHANGE_NUM_SERIES,
   LOAD_COLORSET,
+  REMOVE_COLORSET,
   //  SAVE_COLORSET,
   SELECT_COLORSET,
   SHOW_DASHBOARD,
 } from './actions'
 
-// import { ColorCollectionType } from '../models/types'
+import { ColorCollectionType } from '../models/types'
 
 export const collections = (state = [], action: any) => {
   switch (action.type) {
@@ -15,6 +16,8 @@ export const collections = (state = [], action: any) => {
       return [...state, action.collection]
     case LOAD_COLORSET:
       return JSON.parse(action.json).colorCollections
+    case REMOVE_COLORSET:
+      return state.filter((collection: ColorCollectionType) => collection.id !== action.id)
     default:
       return state
   }
@@ -26,6 +29,8 @@ export const selectedCollection = (state = '', action: any) => {
       return action.id
     case ADD_COLORSET:
       return action.collection.id
+    case REMOVE_COLORSET:
+      return ''
     default:
       return state
   }

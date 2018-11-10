@@ -21,7 +21,7 @@ const defaultState = {
   selectedCollection: collections[0].id,
   json: '',
   showDashboard: false,
-  numSeries: 12
+  numSeries: 6
 }
 
 const store = configureStore(defaultState)

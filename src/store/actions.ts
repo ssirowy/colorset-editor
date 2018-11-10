@@ -38,6 +38,11 @@ export const addColorSet = () => ({
   collection: defaultColorSet(),
 })
 
+export const removeColorSet = (id: string) => ({
+  id,
+  type: REMOVE_COLORSET,
+})
+
 export const selectColorSet = (id: string) => ({
   id,
   type: SELECT_COLORSET

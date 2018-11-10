@@ -10,20 +10,21 @@ import {
   ColorCollectionType,
 } from '../models/types'
 
-// import { ContinuousPalette } from '../components/ContinuousPalette'
-// import { DiscretePalette } from '../components/DiscretePalette'
 import { PaletteList } from '../components/PaletteList'
 
 interface EditorProps {
   collection: ColorCollectionType
+  removeCollection: any
 }
 
-export const Editor: React.SFC<EditorProps> = ({ collection }) => {
+export const Editor: React.SFC<EditorProps> = ({ collection, removeCollection }) => {
 
   const cp = collection.categoricalPalettes
   const sp = collection.sequentialPalettes
   const dp = collection.sequentialPalettes
   const label = collection.label
+
+  const onClick = () => removeCollection(collection.id)
 
   return (
     <Box display="flex" alignItems="center" flexDirection="column">
@@ -31,7 +32,7 @@ export const Editor: React.SFC<EditorProps> = ({ collection }) => {
       <PaletteList palettes={cp} name="Categorical" />
       <PaletteList palettes={sp} name="Sequential" />
       <PaletteList palettes={dp} name="Diverging" />
-      <Button variant='transparent' color='danger'>Remove color set</Button>
+      <Button variant='transparent' color='danger' onClick={onClick}>Remove color set</Button>
     </Box>
   )
 }

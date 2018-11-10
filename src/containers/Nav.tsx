@@ -10,7 +10,7 @@ import {
 import { ApplicationState } from '../store'
 import {
   addColorSet,
-  selectColorSet
+  selectColorSet,
 } from '../store/actions'
 
 const mapStateToProps = ( state: ApplicationState ) => ({
