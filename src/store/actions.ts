@@ -1,6 +1,8 @@
 export const LOAD_COLORSET = 'LOAD_COLORSET'
 export const SAVE_COLORSET = 'SAVE_COLORSET'
 
+export const SHOW_LOAD_UX = 'SHOW_LOAD_UX'
+
 export const ADD_COLORSET = 'ADD_COLORSET'
 export const REMOVE_COLORSET = 'REMOVE_COLORSET'
 export const SELECT_COLORSET = 'SELECT_COLORSET'
@@ -35,6 +37,11 @@ export const loadJSON = (json: string) => ({
 
 export const saveJSON = () => ({
   type: SAVE_COLORSET
+})
+
+export const showLoadUx = (show: boolean) => ({
+  show,
+  type: SHOW_LOAD_UX
 })
 
 /////////////////////////////////////////////////////////////////////

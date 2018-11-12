@@ -8,28 +8,27 @@ import { ColorCollectionType } from '../models/types'
 import {
   collections,
   copiedToClipboard,
-  json,
   numSeries,
   selectedCollection,
   showDashboard,
+  showLoadUx,
 } from './reducers'
 
 // The top-level state object
 export interface ApplicationState {
   collections: ColorCollectionType[],
   selectedCollection: string,
-  json: string,
   showDashboard: boolean,
   numSeries: number,
   copiedToClipboard: boolean
-//   showLoadUx: boolean,
+  showLoadUx: boolean,
 }
 
 export const reducers: Reducer<ApplicationState> = combineReducers<ApplicationState>({
   collections,
   selectedCollection,
-  json,
   showDashboard,
   numSeries,
-  copiedToClipboard
+  copiedToClipboard,
+  showLoadUx
 });

@@ -22,7 +22,8 @@ const defaultState = {
   json: '',
   showDashboard: false,
   numSeries: 6,
-  copiedToClipboard: false
+  copiedToClipboard: false,
+  showLoadUx: false
 }
 
 const store = configureStore(defaultState)
