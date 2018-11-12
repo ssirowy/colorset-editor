@@ -8,10 +8,11 @@ interface HighchartsCardProps {
 }
 
 export const HighchartsCard: React.SFC<HighchartsCardProps> = ({ config }) => {
-  const cardStyle = {
-    width: '400px',
+  const cardStyle: React.CSSProperties = {
+    flexBasis: 0,
+    flexGrow: 1,
     marginRight: '16px',
-    marginBottom: '16px',
+    marginBottom: '16px'
   }
 
   return (
