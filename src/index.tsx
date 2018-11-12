@@ -23,7 +23,7 @@ const defaultState = {
   showDashboard: false,
   numSeries: 6,
   copiedToClipboard: false,
-  showLoadUx: false
+  showLoadUx: true
 }
 
 const store = configureStore(defaultState)

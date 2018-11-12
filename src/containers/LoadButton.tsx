@@ -22,7 +22,7 @@ const LoadButtonContainer: React.SFC<LoadButtonContainerProps> = ({ onClick }) =
 
   return (
       <Box ml="small">
-        <Button variant="transparent" onClick={onClick}>Load</Button>
+        <Button variant="transparent" onClick={onClick}>Load...</Button>
       </Box>
   )
 }

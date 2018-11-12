@@ -2,13 +2,17 @@ import { connect } from 'react-redux'
 
 import { JSONModal } from '../components/JSONModal'
 
-import { loadJSON } from '../store/actions'
+import { loadJSON, showLoadUx } from '../store/actions'
 
 import { ApplicationState } from '../store'
 
 const mapDispatchToProps = (dispatch: any) => ({
   loadJSON: (json: string) => {
     dispatch(loadJSON(json))
+  },
+
+  closeModal: () => {
+    dispatch(showLoadUx(false))
   }
 })
 

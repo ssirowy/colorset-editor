@@ -158,7 +158,16 @@ export const selectedCollection = (state = '', action: any) => {
   }
 }
 
-export const showLoadUx = (state = false, action: any) => action.type === SHOW_LOAD_UX ? action.show : state
+export const showLoadUx = (state = false, action: any) => {
+  switch (action.type) {
+    case SHOW_LOAD_UX:
+      return action.show
+    case LOAD_COLORSET:
+      return false
+    default:
+      return state
+  }
+}
 
 export const showDashboard = (state = true, action: any) => {
   switch(action.type) {
