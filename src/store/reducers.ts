@@ -10,6 +10,7 @@ import {
   SAVE_COLORSET,
   SELECT_COLORSET,
   SHOW_DASHBOARD,
+  SHOW_LOAD_UX,
   UPDATE_COLORSET_TITLE,
   UPDATE_PALETTE_COLORS,
   UPDATE_PALETTE_TITLE,
@@ -157,8 +158,15 @@ export const selectedCollection = (state = '', action: any) => {
   }
 }
 
-export const json = (state = '', action: any) => {
-  return state
+export const showLoadUx = (state = false, action: any) => {
+  switch (action.type) {
+    case SHOW_LOAD_UX:
+      return action.show
+    case LOAD_COLORSET:
+      return false
+    default:
+      return state
+  }
 }
 
 export const showDashboard = (state = true, action: any) => {

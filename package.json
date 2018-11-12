@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/d3-color": "^1.2.1",
+    "@types/react-modal": "^3.2.1",
     "@types/d3-scale": "^2.0.2",
     "@types/react-redux": "^6.0.9",
     "@types/uuid": "^3.4.4",
