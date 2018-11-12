@@ -1,9 +1,15 @@
 import * as React from 'react'
 
 import {
+  DragDropContext,
+  Droppable,
+} from 'react-beautiful-dnd'
+
+import {
   Box,
-  List,
 } from 'looker-lens'
+
+/* tslint:disable */
 
 import { ColorSetItem } from './ColorSetItem'
 
@@ -14,16 +20,46 @@ interface ColorSetListProps {
   collections: ColorCollectionType[]
   selected: string
   collectionClicked: any
+  reorderCollection: any
 }
 
-export const ColorSetList: React.SFC<ColorSetListProps> = ({ collections, ...props }) => (
-  <Box mt='medium'>
-    <List>
-      {
-        collections.map((collection: ColorCollectionType, index: number) => (
-            <ColorSetItem key={index} collection={collection} {...props} />
-        ))
-      }
-    </List>
-  </Box>
-)
+const listStyle = {
+  paddingLeft: '0',
+  marginTop: '0',
+}
+
+
+export class ColorSetList extends React.Component<ColorSetListProps, {}> {
+
+  public onDragEnd = (result: any) => {
+    // dropped outside the list
+    if (!result.destination) {
+      return;
+    }
+
+    this.props.reorderCollection(result.source.index, result.destination.index)
+  }
+
+  public render() {
+
+    const { collections } = this.props
+
+    return (
+        <Box>
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <Droppable droppableId="droppable">
+              {(provided, snapshot) => (
+                  <ul style={listStyle} ref={provided.innerRef}>
+                  {
+                    collections.map((collection: ColorCollectionType, index:number) => (
+                        <ColorSetItem collection={collection} {...this.props} key={index} index={index}/>
+                    ))}
+                  {provided.placeholder}
+                </ul>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </Box>
+    )
+  }
+}

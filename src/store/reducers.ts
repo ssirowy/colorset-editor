@@ -7,6 +7,7 @@ import {
   LOAD_COLORSET,
   REMOVE_COLORSET,
   REMOVE_PALETTE,
+  REORDER_COLORSET,
   SAVE_COLORSET,
   SELECT_COLORSET,
   SHOW_DASHBOARD,
@@ -71,6 +72,12 @@ export const collections = (state = [], action: any) => {
         sequentialPalettes: collection.sequentialPalettes.filter((palette: ContinuousPaletteType) => palette.id !== action.id),
         divergingPalettes: collection.divergingPalettes.filter((palette: ContinuousPaletteType) => palette.id !== action.id)
       }))
+
+    case REORDER_COLORSET:
+      const newState = [...state]
+      const [ removed ] = newState.splice(action.start, 1)
+      newState.splice(action.end, 0, removed);
+      return newState
 
     case UPDATE_PALETTE_COLORS:
       return state.map((collection: ColorCollectionType) => ({

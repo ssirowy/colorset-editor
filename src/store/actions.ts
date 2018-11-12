@@ -6,6 +6,7 @@ export const SHOW_LOAD_UX = 'SHOW_LOAD_UX'
 export const ADD_COLORSET = 'ADD_COLORSET'
 export const REMOVE_COLORSET = 'REMOVE_COLORSET'
 export const SELECT_COLORSET = 'SELECT_COLORSET'
+export const REORDER_COLORSET = 'REORDER_COLORSET'
 export const UPDATE_COLORSET_TITLE = 'UPDATE_COLORSET_TITLE'
 
 export const ADD_CATEGORICAL_PALETTE = 'ADD_CATEGORICAL_PALETTE'
@@ -54,6 +55,12 @@ export const addColorSet = () => ({
 export const removeColorSet = (id: string) => ({
   id,
   type: REMOVE_COLORSET,
+})
+
+export const reorderColorSet = (start: number, end: number) => ({
+  start,
+  end,
+  type: REORDER_COLORSET
 })
 
 export const selectColorSet = (id: string) => ({

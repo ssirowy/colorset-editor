@@ -10,6 +10,7 @@ import {
 import { ApplicationState } from '../store'
 import {
   addColorSet,
+  reorderColorSet,
   selectColorSet,
 } from '../store/actions'
 
@@ -26,15 +27,18 @@ const mapDispatchToProps = (dispatch: any) => ({
   collectionClicked: (id: string) => {
     dispatch(selectColorSet(id))
   },
+  reorderCollection: (start: number, end: number) => {
+    dispatch(reorderColorSet(start, end))
+  }
 })
 
 const navStyle = {
   borderRight: '2px solid #e4e5e6',
 }
 
-const InternalNav: React.SFC<any> = ({ addClicked, collections, selected, collectionClicked }) => (
+const InternalNav: React.SFC<any> = ({ addClicked, ...listProps }) => (
   <Box style={navStyle} mb="medium" display="flex" flexDirection="column" justifyContent="space-between">
-    <ColorSetList collections={collections} selected={selected} collectionClicked={collectionClicked} />
+    <ColorSetList {...listProps}/>
     <Button variant='transparent' onClick={addClicked}>Add color set</Button>
   </Box>
 )

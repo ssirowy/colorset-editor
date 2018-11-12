@@ -19,7 +19,6 @@ const collections = FIXTURES.colorCollections
 const defaultState = {
   collections,
   selectedCollection: collections[0].id,
-  json: '',
   showDashboard: false,
   numSeries: 6,
   copiedToClipboard: false,
