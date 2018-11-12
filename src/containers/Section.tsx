@@ -12,6 +12,9 @@ import {
   addDivergingPalette,
   addSequentialPalette,
   removeColorSet,
+  reorderCategoricalPalettes,
+  reorderDivergingsPalettes,
+  reorderSequentialPalettes,
   updateColorSetTitle,
 } from '../store/actions'
 
@@ -23,15 +26,16 @@ interface SectionProps {
   collection: ColorCollectionType
   numSeries: number
   removeCollection: any
-  updateCollectionTitle: any
+  collectionTitleChanged: any
   showDashboard: boolean
   addPaletteClicked: any
+  reorderPalettes: any
 }
-​
-const InternalSection: React.SFC<SectionProps> = ({ showDashboard, collection, numSeries, removeCollection, updateCollectionTitle, addPaletteClicked }) => (
+
+const InternalSection: React.SFC<SectionProps> = ({ showDashboard, collection, numSeries, ...collectionEditingProps }) => (
   <section>
     {
-      !showDashboard && collection && <Editor collection={collection} removeCollection={removeCollection} collectionTitleChanged={updateCollectionTitle} addPaletteClicked={addPaletteClicked}/>
+      !showDashboard && collection && <Editor collection={collection} {...collectionEditingProps}/>
     }
     {
       !showDashboard && !collection && <SelectACollection />
@@ -61,9 +65,30 @@ const mapDispatchToProps = (dispatch: any) => ({
 
     dispatch(fn(id))
   },
-  updateCollectionTitle: (id: string, title: string) => {
+
+  reorderPalettes: (id: string,  name: string, start: number, end: number) => {
+
+    const paletteType = name.toLowerCase()
+    let fn
+    switch(paletteType) {
+      case 'diverging':
+        fn = reorderDivergingsPalettes
+        break
+      case 'sequential':
+        fn = reorderSequentialPalettes
+        break
+      case 'categorical':
+      default:
+        fn = reorderCategoricalPalettes
+    }
+
+    dispatch(fn(id, start, end))
+  },
+
+  collectionTitleChanged: (id: string, title: string) => {
     dispatch(updateColorSetTitle(id, title))
   },
+
   removeCollection: (id: string) => {
     dispatch(removeColorSet(id))
   }

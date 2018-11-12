@@ -7,6 +7,10 @@ import {
   DiscretePaletteType,
 } from '../models/types'
 
+import {
+  Draggable,
+} from 'react-beautiful-dnd'
+
 import { ContinuousPalette } from './ContinuousPalette'
 import { DiscretePalette } from './DiscretePalette'
 
@@ -14,6 +18,7 @@ import { PaletteEditorContainer } from '../containers/PaletteEditorContainer'
 
 interface PaletteListItemProps {
   palette: ContinuousPaletteType | DiscretePaletteType
+  index: number
 }
 
 interface PaletteListItemState {
@@ -37,12 +42,19 @@ export class PaletteListItem extends React.Component<PaletteListItemProps, Palet
   }
 
   public render() {
-    const { palette } = this.props
+    const { palette, index } = this.props
     const { expanded } = this.state
     const isContinuous = (palette as any).stops !== undefined
 
     return (
-      <li className="palette-list-item">
+        <Draggable key={palette.id} draggableId={palette.id} index={index}>
+        {
+          (provided, snapshot) => (
+            <li className="palette-list-item"
+                ref={provided.innerRef}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}>
+
         <div className="item-content" onClick={this.toggleExpanded}>
           {
             isContinuous ? <ContinuousPalette palette={palette as ContinuousPaletteType} /> : <DiscretePalette palette={palette as DiscretePaletteType} />
@@ -54,7 +66,13 @@ export class PaletteListItem extends React.Component<PaletteListItemProps, Palet
         {
           expanded && <PaletteEditorContainer palette={palette} />
         }
-      </li>
+
+
+
+            </li>
+        )
+      }
+        </Draggable>
     )
   }
 }

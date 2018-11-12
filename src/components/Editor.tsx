@@ -16,6 +16,7 @@ interface EditorProps {
   removeCollection: any
   collectionTitleChanged: any
   addPaletteClicked: any
+  reorderPalettes: any
 }
 
 const headerInputStyle = {
@@ -25,7 +26,7 @@ const headerInputStyle = {
   marginBottom: '16px',
 }
 
-export const Editor: React.SFC<EditorProps> = ({ collection, removeCollection, collectionTitleChanged, addPaletteClicked }) => {
+export const Editor: React.SFC<EditorProps> = ({ collection, removeCollection, collectionTitleChanged, addPaletteClicked, reorderPalettes }) => {
 
   const cp = collection.categoricalPalettes
   const sp = collection.sequentialPalettes
@@ -38,14 +39,18 @@ export const Editor: React.SFC<EditorProps> = ({ collection, removeCollection, c
     addPaletteClicked(collection.id, name)
   }
 
+  const initiateReorder = (name: string, start: number, end: number) => {
+    reorderPalettes(collection.id, name, start, end)
+  }
+
   const onTitleChange = (event: any) => collectionTitleChanged(collection.id, event.target.value)
 
   return (
     <Box display="flex" alignItems="center" flexDirection="column">
       <input style={headerInputStyle} value={label} onChange={onTitleChange}/>
-      <PaletteList palettes={cp} addPaletteClicked={paletteClicked} name="Categorical" />
-      <PaletteList palettes={sp} addPaletteClicked={paletteClicked} name="Sequential" />
-      <PaletteList palettes={dp} addPaletteClicked={paletteClicked} name="Diverging" />
+      <PaletteList palettes={cp} addPaletteClicked={paletteClicked} reorderPalettes={initiateReorder} name="Categorical" />
+      <PaletteList palettes={sp} addPaletteClicked={paletteClicked} reorderPalettes={initiateReorder} name="Sequential" />
+      <PaletteList palettes={dp} addPaletteClicked={paletteClicked} reorderPalettes={initiateReorder} name="Diverging" />
       <Button variant='transparent' color='danger' onClick={onClick}>Remove color set</Button>
     </Box>
   )

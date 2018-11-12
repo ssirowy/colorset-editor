@@ -7,7 +7,10 @@ import {
   LOAD_COLORSET,
   REMOVE_COLORSET,
   REMOVE_PALETTE,
+  REORDER_CATEGORICAL_PALETTES,
   REORDER_COLORSET,
+  REORDER_DIVERGING_PALETTES,
+  REORDER_SEQUENTIAL_PALETTES,
   SAVE_COLORSET,
   SELECT_COLORSET,
   SHOW_DASHBOARD,
@@ -26,6 +29,13 @@ import {
 import {
   stopsForColors
 } from '../utils/color_utils'
+
+const reorderedList = (list: any[], start: number, end: number) => {
+  const newList = [...list]
+  const [ removed ] = newList.splice(start, 1)
+  newList.splice(end, 0, removed)
+  return newList
+}
 
 export const collections = (state = [], action: any) => {
   switch (action.type) {
@@ -73,11 +83,35 @@ export const collections = (state = [], action: any) => {
         divergingPalettes: collection.divergingPalettes.filter((palette: ContinuousPaletteType) => palette.id !== action.id)
       }))
 
+    case REORDER_CATEGORICAL_PALETTES:
+      return state.map((collection: ColorCollectionType) => {
+        if (collection.id !== action.id) return collection
+        return {
+          ...collection,
+          categoricalPalettes: reorderedList(collection.categoricalPalettes, action.start, action.end)
+        }
+      })
+
     case REORDER_COLORSET:
-      const newState = [...state]
-      const [ removed ] = newState.splice(action.start, 1)
-      newState.splice(action.end, 0, removed);
-      return newState
+      return reorderedList(state, action.start, action.end)
+
+    case REORDER_DIVERGING_PALETTES:
+      return state.map((collection: ColorCollectionType) => {
+        if (collection.id !== action.id) return collection
+        return {
+          ...collection,
+          divergingPalettes: reorderedList(collection.divergingPalettes, action.start, action.end)
+        }
+      })
+
+    case REORDER_SEQUENTIAL_PALETTES:
+      return state.map((collection: ColorCollectionType) => {
+        if (collection.id !== action.id) return collection
+        return {
+          ...collection,
+          sequentialPalettes: reorderedList(collection.sequentialPalettes, action.start, action.end)
+        }
+      })
 
     case UPDATE_PALETTE_COLORS:
       return state.map((collection: ColorCollectionType) => ({

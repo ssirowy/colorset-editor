@@ -13,6 +13,10 @@ export const ADD_CATEGORICAL_PALETTE = 'ADD_CATEGORICAL_PALETTE'
 export const ADD_SEQUENTIAL_PALETTE = 'ADD_SEQUENTIAL_PALETTE'
 export const ADD_DIVERGING_PALETTE = 'ADD_DIVERGING_PALETTE'
 
+export const REORDER_CATEGORICAL_PALETTES = 'REORDER_CATEGORICAL_PALETTES'
+export const REORDER_SEQUENTIAL_PALETTES = 'REORDER_SEQUENTIAL_PALETTES'
+export const REORDER_DIVERGING_PALETTES = 'REORDER_DIVERGING_PALETTES'
+
 export const UPDATE_PALETTE_TITLE = 'UPDATE_PALETTE_TITLE'
 export const UPDATE_PALETTE_COLORS = 'UPDATE_PALETTE_COLORS'
 export const REMOVE_PALETTE = 'REMOVE_PALETTE'
@@ -104,6 +108,28 @@ export const addDivergingPalette = (id: string) => ({
   id,
   palette: defaultDivergingPalette(),
   type: ADD_DIVERGING_PALETTE
+})
+
+
+export const reorderCategoricalPalettes = (id: string, start: number, end: number) => ({
+  id,
+  start,
+  end,
+  type: REORDER_CATEGORICAL_PALETTES
+})
+
+export const reorderSequentialPalettes = (id: string, start: number, end: number) => ({
+  id,
+  start,
+  end,
+  type: REORDER_SEQUENTIAL_PALETTES
+})
+
+export const reorderDivergingsPalettes = (id: string, start: number, end: number) => ({
+  id,
+  start,
+  end,
+  type: REORDER_DIVERGING_PALETTES
 })
 
 export const updatePaletteTitle = (id: string, title: string) => ({

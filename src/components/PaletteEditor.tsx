@@ -118,10 +118,10 @@ export class PaletteEditor extends React.Component<PaletteEditorProps, PalettEdi
 
     return (
         <Box p="small" display="flex" flexDirection="column">
-        <Box width="300px" mb="small">
+        <Box width="400px" mb="small">
           <FieldText label="Palette name" value={palette.label} onChange={this.titleChange}/>
         </Box>
-        <Box width="300px" mb="small">
+        <Box width="400px" mb="small">
         <FieldText label="Palette hex codes (separated by commas)" value={hexCodes} onChange={this.hexCodesChange} validationMessage={hexCodeValidation} />
         </Box>
         <Button variant='transparent' color='danger' onClick={this.removePalette}>Remove palette</Button>

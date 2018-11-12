@@ -9,8 +9,6 @@ import {
   Box,
 } from 'looker-lens'
 
-/* tslint:disable */
-
 import { ColorSetItem } from './ColorSetItem'
 
 import { ColorCollectionType } from '../models/types'
@@ -32,7 +30,6 @@ const listStyle = {
 export class ColorSetList extends React.Component<ColorSetListProps, {}> {
 
   public onDragEnd = (result: any) => {
-    // dropped outside the list
     if (!result.destination) {
       return;
     }
