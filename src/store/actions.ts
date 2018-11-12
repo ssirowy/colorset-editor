@@ -7,15 +7,12 @@ export const SELECT_COLORSET = 'SELECT_COLORSET'
 export const UPDATE_COLORSET_TITLE = 'UPDATE_COLORSET_TITLE'
 
 export const ADD_CATEGORICAL_PALETTE = 'ADD_CATEGORICAL_PALETTE'
-export const REMOVE_CATEGORICAL_PALETTE = 'REMOVE_CATEGORICAL_PALETTE'
-
 export const ADD_SEQUENTIAL_PALETTE = 'ADD_SEQUENTIAL_PALETTE'
-export const REMOVE_SEQUENTIAL_PALETTE = 'REMOVE_SEQUENTIAL_PALETTE'
-export const UPDATE_SEQUENTIAL_PALETTE = 'UPDATE_SEQUENTIAL_PALETTE'
-
 export const ADD_DIVERGING_PALETTE = 'ADD_DIVERGING_PALETTE'
-export const REMOVE_DIVERGING_PALETTE = 'REMOVE_DIVERGING_PALETTE'
-export const UPDATE_DIVERGING_PALETTE = 'UPDATE_DIVERGING_PALETTE'
+
+export const UPDATE_PALETTE_TITLE = 'UPDATE_PALETTE_TITLE'
+export const UPDATE_PALETTE_COLORS = 'UPDATE_PALETTE_COLORS'
+export const REMOVE_PALETTE = 'REMOVE_PALETTE'
 
 export const SHOW_DASHBOARD = 'SHOW_DASHBOARD'
 
@@ -28,6 +25,9 @@ import {
   defaultSequentialPalette,
 } from '../utils/colorsets'
 
+
+/////////////////////////////////////////////////////////////////////
+// Loading/storing JSON
 export const loadJSON = (json: string) => ({
   json,
   type: LOAD_COLORSET
@@ -37,6 +37,8 @@ export const saveJSON = () => ({
   type: SAVE_COLORSET
 })
 
+/////////////////////////////////////////////////////////////////////
+// Color set actions
 export const addColorSet = () => ({
   type: ADD_COLORSET,
   collection: defaultColorSet(),
@@ -52,6 +54,14 @@ export const selectColorSet = (id: string) => ({
   type: SELECT_COLORSET
 })
 
+export const updateColorSetTitle = (id: string, title: string) => ({
+  id,
+  title,
+  type: UPDATE_COLORSET_TITLE
+})
+
+/////////////////////////////////////////////////////////////////////
+// Header actions
 export const showDashboard = (show: boolean) => ({
   show,
   type: SHOW_DASHBOARD
@@ -62,12 +72,8 @@ export const setNumSeries = (numSeries: number) => ({
   type: CHANGE_NUM_SERIES
 })
 
-export const updateColorSetTitle = (id: string, title: string) => ({
-  id,
-  title,
-  type: UPDATE_COLORSET_TITLE
-})
-
+/////////////////////////////////////////////////////////////////////
+// Palette actions
 export const addCategoricalPalette = (id: string) => ({
   id,
   palette: defaultCategoricalPalette(),
@@ -84,4 +90,21 @@ export const addDivergingPalette = (id: string) => ({
   id,
   palette: defaultDivergingPalette(),
   type: ADD_DIVERGING_PALETTE
+})
+
+export const updatePaletteTitle = (id: string, title: string) => ({
+  id,
+  title,
+  type: UPDATE_PALETTE_TITLE
+})
+
+export const updatePaletteColors = (id: string, colors: string[]) => ({
+  id,
+  colors,
+  type: UPDATE_PALETTE_COLORS
+})
+
+export const removePalette = (id: string) => ({
+  id,
+  type: REMOVE_PALETTE,
 })

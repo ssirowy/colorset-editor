@@ -6,13 +6,24 @@ import {
   CHANGE_NUM_SERIES,
   LOAD_COLORSET,
   REMOVE_COLORSET,
+  REMOVE_PALETTE,
   SAVE_COLORSET,
   SELECT_COLORSET,
   SHOW_DASHBOARD,
-  UPDATE_COLORSET_TITLE
+  UPDATE_COLORSET_TITLE,
+  UPDATE_PALETTE_COLORS,
+  UPDATE_PALETTE_TITLE,
 } from './actions'
 
-import { ColorCollectionType } from '../models/types'
+import {
+  ColorCollectionType,
+  ContinuousPaletteType,
+  DiscretePaletteType,
+} from '../models/types'
+
+import {
+  stopsForColors
+} from '../utils/color_utils'
 
 export const collections = (state = [], action: any) => {
   switch (action.type) {
@@ -24,8 +35,10 @@ export const collections = (state = [], action: any) => {
           categoricalPalettes: [...collection.categoricalPalettes, action.palette]
         }
       })
+
     case ADD_COLORSET:
       return [...state, action.collection]
+
     case ADD_DIVERGING_PALETTE:
       return state.map((collection: ColorCollectionType) => {
         if (collection.id !== action.id) return collection
@@ -34,6 +47,7 @@ export const collections = (state = [], action: any) => {
           divergingPalettes: [...collection.divergingPalettes, action.palette]
         }
       })
+
     case ADD_SEQUENTIAL_PALETTE:
       return state.map((collection: ColorCollectionType) => {
         if (collection.id !== action.id) return collection
@@ -42,10 +56,79 @@ export const collections = (state = [], action: any) => {
           sequentialPalettes: [...collection.sequentialPalettes, action.palette]
         }
       })
+
     case LOAD_COLORSET:
       return JSON.parse(action.json).colorCollections
+
     case REMOVE_COLORSET:
       return state.filter((collection: ColorCollectionType) => collection.id !== action.id)
+
+    case REMOVE_PALETTE:
+      return state.map((collection: ColorCollectionType) => ({
+        ...collection,
+        categoricalPalettes: collection.categoricalPalettes.filter((palette: DiscretePaletteType) => palette.id !== action.id),
+        sequentialPalettes: collection.sequentialPalettes.filter((palette: ContinuousPaletteType) => palette.id !== action.id),
+        divergingPalettes: collection.divergingPalettes.filter((palette: ContinuousPaletteType) => palette.id !== action.id)
+      }))
+
+    case UPDATE_PALETTE_COLORS:
+      return state.map((collection: ColorCollectionType) => ({
+        ...collection,
+        categoricalPalettes: collection.categoricalPalettes.map((palette: DiscretePaletteType) => {
+          if (palette.id !== action.id) return palette
+
+          return {
+            ...palette,
+            colors: action.colors
+          }
+        }),
+        sequentialPalettes: collection.sequentialPalettes.map((palette: ContinuousPaletteType) => {
+          if (palette.id !== action.id) return palette
+
+          return {
+            ...palette,
+            stops: stopsForColors(action.colors)
+          }
+        }),
+        divergingPalettes: collection.divergingPalettes.map((palette: ContinuousPaletteType) => {
+          if (palette.id !== action.id) return palette
+
+          return {
+            ...palette,
+            stops: stopsForColors(action.colors)
+          }
+        })
+      }))
+
+    case UPDATE_PALETTE_TITLE:
+      return state.map((collection: ColorCollectionType) => ({
+        ...collection,
+        categoricalPalettes: collection.categoricalPalettes.map((palette: DiscretePaletteType) => {
+          if (palette.id !== action.id) return palette
+
+          return {
+            ...palette,
+            label: action.title
+          }
+        }),
+        sequentialPalettes: collection.sequentialPalettes.map((palette: ContinuousPaletteType) => {
+          if (palette.id !== action.id) return palette
+
+          return {
+            ...palette,
+            label: action.title
+          }
+        }),
+        divergingPalettes: collection.divergingPalettes.map((palette: ContinuousPaletteType) => {
+          if (palette.id !== action.id) return palette
+
+          return {
+            ...palette,
+            label: action.title
+          }
+        })
+      }))
+
     case UPDATE_COLORSET_TITLE:
       return state.map((collection: ColorCollectionType) => {
         if (collection.id !== action.id) return collection
@@ -55,6 +138,7 @@ export const collections = (state = [], action: any) => {
           label: action.title
         }
       })
+
     default:
       return state
   }

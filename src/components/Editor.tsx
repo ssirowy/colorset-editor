@@ -43,9 +43,9 @@ export const Editor: React.SFC<EditorProps> = ({ collection, removeCollection, c
   return (
     <Box display="flex" alignItems="center" flexDirection="column">
       <input style={headerInputStyle} value={label} onChange={onTitleChange}/>
-      <PaletteList palettes={cp} addPaletteClicked={paletteClicked} name="categorical" />
-      <PaletteList palettes={sp} addPaletteClicked={paletteClicked} name="sequential" />
-      <PaletteList palettes={dp} addPaletteClicked={paletteClicked} name="diverging" />
+      <PaletteList palettes={cp} addPaletteClicked={paletteClicked} name="Categorical" />
+      <PaletteList palettes={sp} addPaletteClicked={paletteClicked} name="Sequential" />
+      <PaletteList palettes={dp} addPaletteClicked={paletteClicked} name="Diverging" />
       <Button variant='transparent' color='danger' onClick={onClick}>Remove color set</Button>
     </Box>
   )

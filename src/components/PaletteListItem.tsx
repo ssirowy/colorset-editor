@@ -10,7 +10,7 @@ import {
 import { ContinuousPalette } from './ContinuousPalette'
 import { DiscretePalette } from './DiscretePalette'
 
-import { PaletteEditor } from './PaletteEditor'
+import { PaletteEditorContainer } from '../containers/PaletteEditorContainer'
 
 interface PaletteListItemProps {
   palette: ContinuousPaletteType | DiscretePaletteType
@@ -52,7 +52,7 @@ export class PaletteListItem extends React.Component<PaletteListItemProps, Palet
           </div>
         </div>
         {
-          expanded && <PaletteEditor palette={palette} />
+          expanded && <PaletteEditorContainer palette={palette} />
         }
       </li>
     )

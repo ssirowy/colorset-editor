@@ -28,6 +28,10 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@types/d3-color@^1.2.1":
+  version "1.2.1"
+  resolved "https://nexusrepo.looker.com/repository/looker-npm-group/@types/d3-color/-/d3-color-1.2.1.tgz#26141c3c554e320edd40726b793570a3ae57397e"
+
 "@types/jest@^23.3.7":
   version "23.3.9"
   resolved "https://nexusrepo.looker.com/repository/looker-npm-group/@types/jest/-/jest-23.3.9.tgz#c16b55186ee73ae65e001fbee69d392c51337ad1"

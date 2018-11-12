@@ -45,8 +45,9 @@ const InternalSection: React.SFC<SectionProps> = ({ showDashboard, collection, n
 const mapDispatchToProps = (dispatch: any) => ({
   addPaletteClicked: (id: string,  name: string) => {
 
+    const paletteType = name.toLowerCase()
     let fn
-    switch(name) {
+    switch(paletteType) {
       case 'diverging':
         fn = addDivergingPalette
         break
