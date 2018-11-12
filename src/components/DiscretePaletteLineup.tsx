@@ -9,10 +9,10 @@ interface LineupProps {
 }
 
 export const DiscretePaletteLineup: React.SFC<LineupProps> = ({ palette, numSeries }) => {
-  const rowStyle = {
+  const rowStyle: React.CSSProperties = {
     display: 'flex',
     flexWrap: 'nowrap'
-  } as any
+  }
 
   const area = areaChart(palette, numSeries)
   const column = columnChart(palette, numSeries)
