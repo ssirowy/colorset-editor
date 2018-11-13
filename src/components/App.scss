@@ -3,8 +3,7 @@
 }
 
 header {
-  border-bottom: 2px solid #e4e5e6;
-  height: 50px;
+  height: 60px;
   width: 100%;
 
   div {
@@ -21,12 +20,18 @@ main {
     display: grid;
     grid-template-columns: 300px 1fr;
     grid-template-rows: auto;
-    height: calc(100vh - 50px);
+    height: 100vh;
+
+    h3 {
+      color: #64518A;
+      font-family: sans-serif;
+    }
 }
 
 section {
     background-color: #f0f0f0;
     justify-content: flex-start;
     padding: 16px;
+    padding-top: 0;
     overflow-y: auto;
 }

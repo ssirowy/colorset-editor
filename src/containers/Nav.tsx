@@ -4,7 +4,7 @@ import { ColorSetList } from '../components/ColorSetList'
 
 import {
   Box,
-  Button
+  Button,
 } from 'looker-lens'
 
 import { ApplicationState } from '../store'
@@ -33,13 +33,21 @@ const mapDispatchToProps = (dispatch: any) => ({
 })
 
 const navStyle = {
+  backgroundColor: '#E8E5FF',
   borderRight: '2px solid #e4e5e6',
 }
 
 const InternalNav: React.SFC<any> = ({ addClicked, ...listProps }) => (
-  <Box style={navStyle} mb="medium" display="flex" flexDirection="column" justifyContent="space-between">
-    <ColorSetList {...listProps}/>
-    <Button variant='transparent' onClick={addClicked}>Add color set</Button>
+  <Box style={navStyle} display="flex" flexDirection="column" justifyContent="space-between">
+    <Box>
+      <Box display="flex" justifyContent="center">
+        <h3>Looker color sets</h3>
+      </Box>
+      <ColorSetList {...listProps}/>
+    </Box>
+    <Box mb="small" display="flex" justifyContent="center">
+      <Button variant='transparent' onClick={addClicked}>Add color set</Button>
+    </Box>
   </Box>
 )
 ​

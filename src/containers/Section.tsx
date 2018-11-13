@@ -5,6 +5,8 @@ import { Dashboard } from '../components/Dashboard'
 import { Editor } from '../components/Editor'
 import { SelectACollection } from '../components/SelectACollection'
 
+import { Header } from '../components/Header'
+
 import { ApplicationState } from '../store'
 
 import {
@@ -34,6 +36,8 @@ interface SectionProps {
 
 const InternalSection: React.SFC<SectionProps> = ({ showDashboard, collection, numSeries, ...collectionEditingProps }) => (
   <section>
+    <Header showSeries={showDashboard}/>
+
     {
       !showDashboard && collection && <Editor collection={collection} {...collectionEditingProps}/>
     }

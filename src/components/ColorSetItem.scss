@@ -12,7 +12,15 @@
   }
 
   &.selected {
+    background-color: #64518A;
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &:hover {
     color: #64518A;
-    font-weight: bold;
   }
 }

@@ -7,11 +7,17 @@ import { LoadButton } from '../containers/LoadButton'
 import { ToggleDashboardButton } from '../containers/ToggleDashboardButton'
 import { SeriesCountInput } from './SeriesCountInput'
 
-export const Header = () => (
+interface HeaderProps {
+  showSeries : boolean
+}
+
+export const Header: React.SFC<HeaderProps> = ({ showSeries }) => (
   <header>
     <div>
       <ToggleDashboardButton>Toggle dashboard/editor</ToggleDashboardButton>
-      <SeriesCountInput />
+      {
+        showSeries &&  <SeriesCountInput />
+      }
       <Box>
         <CopyButton />
         <LoadButton />
