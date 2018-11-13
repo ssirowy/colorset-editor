@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ColorCollectionType } from '../models/types'
 import { DiscretePaletteLineup } from './DiscretePaletteLineup'
 
-import { Heading } from 'looker-lens'
+import { Text } from 'looker-lens'
 import { ContinuousPaletteLineup } from './ContinuousPaletteLineup';
 
 interface DashboardProps {
@@ -21,7 +21,7 @@ export const Dashboard: React.SFC<DashboardProps> = ({ collection, numSeries }) 
       {
         collection.categoricalPalettes.map((cPalette, index) => (
           <div key={index}>
-            <Heading>{cPalette.label}</Heading>
+            <Text>{cPalette.label}</Text>
             <DiscretePaletteLineup palette={cPalette} numSeries={numSeries} />
           </div>
         ))
@@ -29,7 +29,7 @@ export const Dashboard: React.SFC<DashboardProps> = ({ collection, numSeries }) 
       {
         collection.sequentialPalettes.map((sPalette, index) => (
           <div key={index}>
-            <Heading>{sPalette.label}</Heading>
+            <Text>{sPalette.label}</Text>
             <ContinuousPaletteLineup palette={sPalette} />
           </div>
         ))
@@ -37,7 +37,7 @@ export const Dashboard: React.SFC<DashboardProps> = ({ collection, numSeries }) 
       {
         collection.divergingPalettes.map((dPalette, index) => (
           <div key={index}>
-            <Heading>{dPalette.label}</Heading>
+            <Text>{dPalette.label}</Text>
             <ContinuousPaletteLineup palette={dPalette} />
           </div>
         ))
