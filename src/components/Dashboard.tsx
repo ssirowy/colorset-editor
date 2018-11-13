@@ -21,7 +21,7 @@ export const Dashboard: React.SFC<DashboardProps> = ({ collection, numSeries }) 
       {
         collection.categoricalPalettes.map((cPalette, index) => (
           <div key={index}>
-            <Text>{cPalette.label}</Text>
+            <Text size="5">{cPalette.label}</Text>
             <DiscretePaletteLineup palette={cPalette} numSeries={numSeries} />
           </div>
         ))
@@ -29,7 +29,7 @@ export const Dashboard: React.SFC<DashboardProps> = ({ collection, numSeries }) 
       {
         collection.sequentialPalettes.map((sPalette, index) => (
           <div key={index}>
-            <Text>{sPalette.label}</Text>
+            <Text size="5">{sPalette.label}</Text>
             <ContinuousPaletteLineup palette={sPalette} />
           </div>
         ))
@@ -37,7 +37,7 @@ export const Dashboard: React.SFC<DashboardProps> = ({ collection, numSeries }) 
       {
         collection.divergingPalettes.map((dPalette, index) => (
           <div key={index}>
-            <Text>{dPalette.label}</Text>
+            <Text size="5">{dPalette.label}</Text>
             <ContinuousPaletteLineup palette={dPalette} />
           </div>
         ))
