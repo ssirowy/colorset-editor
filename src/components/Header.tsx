@@ -14,7 +14,11 @@ interface HeaderProps {
 export const Header: React.SFC<HeaderProps> = ({ showSeries }) => (
   <header>
     <div>
-      <ToggleDashboardButton>Toggle dashboard/editor</ToggleDashboardButton>
+      <ToggleDashboardButton>
+      {
+        showSeries ? 'Back to editor' : 'View in dashboard'
+      }
+      </ToggleDashboardButton>
       {
         showSeries &&  <SeriesCountInput />
       }
