@@ -16,6 +16,7 @@ import {
 } from 'looker-lens'
 
 const collections = FIXTURES.colorCollections
+
 const defaultState = {
   collections,
   selectedCollection: collections[0].id,

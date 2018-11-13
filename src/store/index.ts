@@ -3,7 +3,7 @@ import {
   Reducer
 } from 'redux'
 
-import { ColorCollectionType } from '../models/types'
+// import { ColorCollectionType } from '../models/types'
 
 import {
   collections,
@@ -16,7 +16,7 @@ import {
 
 // The top-level state object
 export interface ApplicationState {
-  collections: ColorCollectionType[],
+  collections: any[],
   selectedCollection: string,
   showDashboard: boolean,
   numSeries: number,
