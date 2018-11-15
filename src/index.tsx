@@ -17,7 +17,7 @@ import {
 
 const collections = FIXTURES.colorCollections
 
-const defaultState = {
+let defaultState = {
   collections,
   selectedCollection: collections[0].id,
   showDashboard: false,
@@ -26,7 +26,18 @@ const defaultState = {
   showLoadUx: false
 }
 
+const storedState = localStorage.getItem('colors')
+if (storedState) {
+  defaultState = JSON.parse(storedState)
+}
+
 const store = configureStore(defaultState)
+
+const writeToLocalStorage = () => {
+  localStorage.setItem('colors', JSON.stringify(store.getState()))
+}
+
+store.subscribe(writeToLocalStorage)
 
 ReactDOM.render(
   <Provider store={store}>
