@@ -151,7 +151,7 @@ export const removePalette = (id: string) => ({
   type: REMOVE_PALETTE,
 })
 
-export const  = (id: string) => ({
+export const selectPalette = (id: string) => ({
   id,
   type: SELECT_PALETTE
 })
