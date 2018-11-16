@@ -9,6 +9,8 @@ import { Header } from '../components/Header'
 
 import { ApplicationState } from '../store'
 
+/* tslint:disable */
+
 import {
   addCategoricalPalette,
   addDivergingPalette,
@@ -17,6 +19,7 @@ import {
   reorderCategoricalPalettes,
   reorderDivergingsPalettes,
   reorderSequentialPalettes,
+  selectPalette,
   updateColorSetTitle,
 } from '../store/actions'
 
@@ -26,12 +29,14 @@ import {
 
 interface SectionProps {
   collection: ColorCollectionType
+  selectedPalette: string
   numSeries: number
   removeCollection: any
   collectionTitleChanged: any
   showDashboard: boolean
   addPaletteClicked: any
   reorderPalettes: any
+  paletteClicked: any
 }
 
 const InternalSection: React.SFC<SectionProps> = ({ showDashboard, collection, numSeries, ...collectionEditingProps }) => (
@@ -95,13 +100,18 @@ const mapDispatchToProps = (dispatch: any) => ({
 
   removeCollection: (id: string) => {
     dispatch(removeColorSet(id))
+  },
+
+  paletteClicked: (id: string) => {
+    dispatch(selectPalette(id))
   }
 })
 
 const mapStateToProps = ( state: ApplicationState ) => ({
-  showDashboard: state.showDashboard,
   collection: state.collections.find((collection: ColorCollectionType) => collection.id === state.selectedCollection),
-  numSeries: state.numSeries
+  showDashboard: state.showDashboard,
+  numSeries: state.numSeries,
+  selectedPalette: state.selectedPalette,
 })
 
 export const Section = connect(mapStateToProps, mapDispatchToProps)(InternalSection)

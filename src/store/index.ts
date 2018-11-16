@@ -10,6 +10,7 @@ import {
   copiedToClipboard,
   numSeries,
   selectedCollection,
+  selectedPalette,
   showDashboard,
   showLoadUx,
 } from './reducers'
@@ -18,6 +19,7 @@ import {
 export interface ApplicationState {
   collections: any[],
   selectedCollection: string,
+  selectedPalette: string,
   showDashboard: boolean,
   numSeries: number,
   copiedToClipboard: boolean
@@ -27,6 +29,7 @@ export interface ApplicationState {
 export const reducers: Reducer<ApplicationState> = combineReducers<ApplicationState>({
   collections,
   selectedCollection,
+  selectedPalette,
   showDashboard,
   numSeries,
   copiedToClipboard,

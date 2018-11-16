@@ -20,9 +20,11 @@ import { PaletteListItem } from './PaletteListItem'
 
 interface PaletteListProps {
   palettes: any[]
-  name: string
   addPaletteClicked: any
   reorderPalettes: any
+  paletteClicked: any
+  selected: string
+  name: string
 }
 
 const listStyle = {
@@ -46,7 +48,7 @@ export class PaletteList extends React.Component<PaletteListProps, {}> {
 
   public render() {
 
-    const { palettes } = this.props
+    const { palettes, selected, paletteClicked } = this.props
 
     return (
       <Box mt="small" mb="medium" width="600px">
@@ -55,12 +57,12 @@ export class PaletteList extends React.Component<PaletteListProps, {}> {
           <ul style={listStyle}>
             {
               <DragDropContext onDragEnd={this.onDragEnd}>
-                <Droppable droppableId="droppable">
+                <Droppable droppableId="palette-list">
                   {(provided, snapshot) => (
                     <ul style={listStyle} ref={provided.innerRef}>
                       {
                         palettes.map((palette, index) => (
-                          <PaletteListItem key={index} palette={palette} index={index}/>
+                            <PaletteListItem key={index} palette={palette} index={index} selected={selected} paletteClicked={paletteClicked}/>
                         ))}
                       {provided.placeholder}
                     </ul>

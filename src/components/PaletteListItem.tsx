@@ -14,65 +14,45 @@ import {
 import { ContinuousPalette } from './ContinuousPalette'
 import { DiscretePalette } from './DiscretePalette'
 
-import { PaletteEditorContainer } from '../containers/PaletteEditorContainer'
-
 interface PaletteListItemProps {
   palette: ContinuousPaletteType | DiscretePaletteType
+  selected: string
   index: number
+  paletteClicked: any
 }
 
-interface PaletteListItemState {
-  expanded: boolean
-}
-
-export class PaletteListItem extends React.Component<PaletteListItemProps, PaletteListItemState> {
-
-  constructor (props: PaletteListItemProps) {
-    super(props)
-
-    this.state = {
-      expanded: false
-    }
-  }
-
-  public toggleExpanded = () => {
-    this.setState({
-      expanded: !this.state.expanded
-    })
-  }
+export class PaletteListItem extends React.Component<PaletteListItemProps, {}> {
 
   public render() {
-    const { palette, index } = this.props
-    const { expanded } = this.state
+    const { palette, index, selected, paletteClicked } = this.props
     const isContinuous = (palette as any).stops !== undefined
 
+    const selectedClass = (selected === palette.id) ? 'selected' : ''
+    const classNames = `palette-list-item ${selectedClass}`
+
+    const onClick = () => paletteClicked(palette.id)
+
     return (
-        <Draggable key={palette.id} draggableId={palette.id} index={index}>
+      <Draggable key={palette.id} draggableId={palette.id} index={index}>
         {
           (provided, snapshot) => (
-            <li className="palette-list-item"
+             <li className={classNames}
                 ref={provided.innerRef}
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}>
 
-        <div className="item-content" onClick={this.toggleExpanded}>
-          {
-            isContinuous ? <ContinuousPalette palette={palette as ContinuousPaletteType} /> : <DiscretePalette palette={palette as DiscretePaletteType} />
-          }
-          <div className="label">
-            {palette.label}
-          </div>
-        </div>
-        {
-          expanded && <PaletteEditorContainer palette={palette} />
-        }
-
-
-
+              <div className="item-content" onClick={onClick}>
+                {
+                  isContinuous ? <ContinuousPalette palette={palette as ContinuousPaletteType} /> : <DiscretePalette palette={palette as DiscretePaletteType} />
+                }
+                <div className="label">
+                  {palette.label}
+                </div>
+              </div>
             </li>
-        )
-      }
-        </Draggable>
+          )
+        }
+      </Draggable>
     )
   }
 }

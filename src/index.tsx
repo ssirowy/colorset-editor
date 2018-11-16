@@ -23,6 +23,7 @@ const defaultState = {
   showDashboard: false,
   numSeries: 6,
   copiedToClipboard: false,
+  selectedPalette: collections[0].categoricalPalettes[0].id,
   showLoadUx: false
 }
 
