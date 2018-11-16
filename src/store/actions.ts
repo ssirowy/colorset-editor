@@ -25,6 +25,8 @@ export const SHOW_DASHBOARD = 'SHOW_DASHBOARD'
 
 export const CHANGE_NUM_SERIES = 'CHANGE_NUM_SERIES'
 
+export const SELECT_PALETTE = 'SELECT_PALETTE'
+
 import {
   defaultCategoricalPalette,
   defaultColorSet,
@@ -147,4 +149,9 @@ export const updatePaletteColors = (id: string, colors: string[]) => ({
 export const removePalette = (id: string) => ({
   id,
   type: REMOVE_PALETTE,
+})
+
+export const  = (id: string) => ({
+  id,
+  type: SELECT_PALETTE
 })

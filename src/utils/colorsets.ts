@@ -1,5 +1,7 @@
 import { v4 as uuid } from 'uuid'
 
+import { ColorCollectionType } from '../models/types'
+
 export const defaultColorSet = () => ({
   id: uuid(),
   label: 'New color set',
@@ -47,3 +49,7 @@ export const defaultDivergingPalette = () => ({
     }
   ]
 })
+
+export const paletteInCollection = (collection: ColorCollectionType,  paletteId: string) =>
+  [...collection.categoricalPalettes, ...collection.sequentialPalettes, ...collection.divergingPalettes]
+  .find((palette) => palette.id === paletteId)

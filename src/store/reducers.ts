@@ -13,6 +13,7 @@ import {
   REORDER_SEQUENTIAL_PALETTES,
   SAVE_COLORSET,
   SELECT_COLORSET,
+  SELECT_PALETTE,
   SHOW_DASHBOARD,
   SHOW_LOAD_UX,
   UPDATE_COLORSET_TITLE,
@@ -223,6 +224,22 @@ export const numSeries = (state = 3, action: any) => {
   switch (action.type) {
     case CHANGE_NUM_SERIES:
       return action.numSeries
+    default:
+      return state
+  }
+}
+
+export const selectedPalette = (state = '', action: any) => {
+  switch (action.type) {
+    case ADD_CATEGORICAL_PALETTE:
+    case ADD_SEQUENTIAL_PALETTE:
+    case ADD_DIVERGING_PALETTE:
+      return action.palette.id
+
+    case SELECT_PALETTE:
+        return action.id
+    case REMOVE_PALETTE:
+      return ''
     default:
       return state
   }
